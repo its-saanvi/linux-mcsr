@@ -29,7 +29,7 @@ i3 is a WM that has been tested a lot and it works very well with Fedora and all
 # Cursor speeds and DPI
 
 - First of all, install `xinput` from your distribution's packages. It is required for setting cursor speeds in X11.
-- Refer to [Priffin's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out the proper boat eye cursor speed, DPI and sensitivity and setup any Minecraft related setup as explained [here](https://youtu.be/G5XNCcgv4qE).
+- Refer to [Priffie's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out the proper boat eye cursor speed, DPI and sensitivity and setup any Minecraft related setup as explained [here](https://youtu.be/G5XNCcgv4qE).
   ![image](https://github.com/its-saanvi/linux-mcsr/assets/94102031/08041a38-7909-495f-b90f-b453b14152ce)
 - To convert your cursor speeds to the appropriate multipliers (refer to the EPP off column here), use the table above.
 - Set the DPI to the DPI that you took from the calculator in your mouse configuration application.
@@ -102,6 +102,9 @@ else:
 - Now press the `Run Script` button and the hotkey should be activated. You can close the Autokey window now but it will still run in the system tray. You can suspend hotkeys by just right clicking on the systray entry for Autokey and hitting `Exit Autokey`.
 - **NOTE:** You should run Autokey and run the script each time you want to have Tall Macro.
 - You can also run custom scripts on every resolution toggle (eg. for setting DPI on toggling resolution for easier eye measurements by just adding a call to `os.system(<script_path>)` in the respective if/elif conditions, but this is out-of-scope of this document).
+
+# OBS Projectors
+- You can follow the [Priffie's Youtube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup OBS projectors.
 
 # Polling Rate
 

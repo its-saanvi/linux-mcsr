@@ -104,7 +104,7 @@ else:
 - You can also run custom scripts on every resolution toggle (eg. for setting DPI on toggling resolution for easier eye measurements by just adding a call to `os.system(<script_path>)` in the respective if/elif conditions, but this is out-of-scope of this document).
 
 # OBS Projectors
-- You can follow the [Priffie's Youtube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup OBS projectors.
+- You can follow [Priffie's Youtube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup OBS projectors.
 
 # Polling Rate
 

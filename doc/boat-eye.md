@@ -116,6 +116,6 @@ else:
 
 # Finishing Up
 
-- If you are using OBS Studio for displaying the eye measuring projector, note that the projector can be set up by using a screen capture in OBS. Refer to [method 2](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#Eye-Measuring-Projector).
-- **However**, this version of Tall Macro doesn’t automatically display the projector alongside the tall Minecraft window. You can, however, keep it open on another screen or behind your Minecraft window and refer to it while counting pixels.  
-- Congratulations! You have successfully set up Boat Eye on Linux!
+- If you are using OBS for displaying the eye measuring projector, note that the projector can be set up by using a screen capture in OBS. Refer to [method 2](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#Eye-Measuring-Projector).
+- **However**, this version of Tall Macro doesn’t automatically display the projector alongside the Tall Minecraft Window. You can, however, keep it open on another screen where it is always open or behind your Minecraft window and just peeking over at that to count pixels.
+- Congratulations! We have successfully set up boat eye on Linux!

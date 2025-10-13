@@ -103,8 +103,10 @@ else:
 - **NOTE:** You should run Autokey and run the script each time you want to have Tall Macro.
 - You can also run custom scripts on every resolution toggle (eg. for setting DPI on toggling resolution for easier eye measurements by just adding a call to `os.system(<script_path>)` in the respective if/elif conditions, but this is out-of-scope of this document).
 
-# OBS Projectors
-- You can follow [Priffie's Youtube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup OBS projectors.
+# Eye Measuring Projector
+- There are two methods for displaying an eye measuring projector:
+  - You can use [xEyeSee by qMaxXen](https://github.com/qMaxXen/xEyeSee?tab=readme-ov-file#xeyesee) to display an eye measuring projector automatically when using Tall Macro. This method does not require OBS Studio. 
+  - The second method is to use OBS Studio. You can follow [Priffie's YouTube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup an OBS projector.
 
 # Polling Rate
 
@@ -114,6 +116,6 @@ else:
 
 # Finishing Up
 
-- The zoom overlay for pixel counting could also be setup the same way as Windows by using the method for non-Julti macros (using a screen capture on OBS).
-- However, this version of the Tall Macro doesn't support moving the projector under the Tall Minecraft Window and displaying it alongside. But it is possible to have another screen where it is always open and just peeking over at that to count pixels.
-- Congratulations! We have successfully setup boat eye on Linux!
+- If you are using OBS Studio for displaying the eye measuring projector, note that the projector can be set up by using a screen capture in OBS. Refer to [method 2](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#Eye-Measuring-Projector).
+- **However**, this version of Tall Macro doesn’t automatically display the projector alongside the tall Minecraft window. You can, however, keep it open on another screen or behind your Minecraft window and refer to it while counting pixels.  
+- Congratulations! You have successfully set up Boat Eye on Linux!

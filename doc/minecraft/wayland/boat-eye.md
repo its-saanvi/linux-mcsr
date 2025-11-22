@@ -1,22 +1,18 @@
 # Boat Eye
 
-Setting up boat eye on Linux is not as easy as it is on Windows. You might see some super weird behaviour while using it just because X11 handles mouse movement much different than Windows.
-
-Make sure to follow instructions as closely as possible but if you do get any errors, make sure to post an issue [here](https://github.com/its-saanvi/linux-mcsr/issues) and I'll try and fix/debug the issue as far as possible.
-
-The instructions given below will guide you through the procedure to setup boat eye on Linux.
+Setting up boat eye on Linux is not as easy as it is on Windows. You might see some super weird behaviour while using it just because X11 handles mouse movement much different than Windows. Make sure to follow instructions as closely as possible.
 
 # Flagged WMs
 
-- There are quite many window managers that this setup would never work on. Here, we will just list all of them that I found people report about.
+- There are some window managers that have trouble with out-of-bounds window resizing, or just window resizing in general:
   - muffin (Linux Mint/Cinnamon Desktop Environment)
   - xfwm (XFCE Desktop Environment)
   - mutter (Gnome Desktop Environment)
   - kwin (KDE Desktop Environment)
-- More will be added to this list as errors are reported.
+- Before switching desktop environments/window managers, check if initially resizing the game window out of monitor bounds works for you. Set the `play_res` and each `alt_res` option in your resetti config to be 1 pixel larger than your monitor's bounds in either dimension.
 
 # i3
-i3 is a WM that has been tested a lot and it works very well with Fedora and all the tools. If you haven't setup i3 yet, you can do so in the **Setting up i3** section of this guide.
+i3 is an X11 WM that has been tested a lot and it works very well with Fedora and all the tools. You can set it up in [this](i3.html) section of the guide.
 
 # Setting up mouse drivers
 
@@ -31,7 +27,7 @@ i3 is a WM that has been tested a lot and it works very well with Fedora and all
 - First of all, install `xinput` from your distribution's packages. It is required for setting cursor speeds in X11.
 - Refer to [Priffie's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out the proper boat eye cursor speed, DPI and sensitivity and setup any Minecraft related setup as explained [here](https://youtu.be/G5XNCcgv4qE).
   ![image](https://github.com/its-saanvi/linux-mcsr/assets/94102031/08041a38-7909-495f-b90f-b453b14152ce)
-- To convert your cursor speeds to the appropriate multipliers (refer to the EPP off column here), use the table above.
+- To convert your cursor to the appropriate speed (refer to the EPP off row here), use the table above.
 - Set the DPI to the DPI that you took from the calculator in your mouse configuration application.
 - Figure out the correct device ID for your mouse by running `xinput` in a terminal and analyzing the output.
 - Pick the correct id corresponding to your mouse and note it down.

@@ -53,40 +53,19 @@ chmod -x bin
 
 ```bash
 #!/bin/bash
-instance_prefix="Speedrun"
-instance_num=12
-# DO NOT add a '/' at the end of mmc_prefix's value
-mmc_prefix=~/.local/share/multimc/instances
-for i in $(seq 1 $instance_num);
+instances=("Ranked" "SeedQueue" "Practice")
+# DO NOT add a '/' at the end of launcher_prefix's value
+launcher_prefix=~/.local/share/PrismLauncher/instances
+for inst in ${instances[@]};
 do
-    rm -r $mmc_prefix/$instance_prefix$i/saves/Random*
+    rm -r $launcher_prefix/$inst/saves/Random*
+    rm -r $launcher_prefix/$inst/saves/New*
 done
 ```
 
-- Here in the `rm` command, we actually use a shorthand representation to expand every folder starting with `Random` in its name. So its matches would look something like `Random Speedrun #12345`, `Random Speedrun #12346` and so on
-- We also use the `seq` command which gives us a range which can be iterated over for example in a for loop. You can test it by trying out `seq 1 12` in a terminal.
-- We also use a for loop in bash to loop over every instance number and delete every world folder.
-
-# Launch all instances
-
-- We can launch all our instances by using a script too!
-- Here is one to launch all instances of a particular format.
-
-```bash
-#!/bin/bash
-instance_prefix="Speedrun"
-instance_num=12
-mmc_binary=multimc
-for i in $(seq 1 $instance_num);
-do
-    $mmc_binary -l $instance_prefix$i &
-done
-```
-
-- The `multimc` binary has a flag `-l` which you can pass to launch that instance.
-- We also use the `seq` command which gives us a range which can be iterated over for example in a for loop. You can test it by trying out `seq 1 12` in a terminal.
-- Here we also use an `&` at the end of the command to background the process. This is done so that all instances launch together.
-- The profile for the instance would be the default profile as we are not specifying it during launch.
+- We use a list called `instances` to list the names of some instances we might have in Prism Launcher.
+- Here in the `rm` commands, we use shorthand representation to expand every folder starting with `Random` and `New` in its name. Its matches would include names like `Random Speedrun #12345`, `New World (32)`, and so on.
+- We also use `for` to loop over every instance and delete every matching world folder.
 
 # Going ahead
 

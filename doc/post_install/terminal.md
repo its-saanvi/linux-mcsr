@@ -8,7 +8,7 @@ It's a part of every system (irrespective of Operating System) that helps you co
 
 It is a very powerful tool and most of the time, GUI applications have these commands running in the back when you click buttons to perform actions.
 
-You can open up a terminal on Fedora by hitting the keybind `Ctrl+Shift+T`.
+You can open up a terminal in Plasma by hitting the keybind `Ctrl+Alt+T`.
 
 # Directories
 
@@ -156,3 +156,5 @@ ls | grep text.txt
 
 - `grep` is used to print out all the lines within an output or a file with `text.txt` in it.
 - You can pipe the output of any command into `grep` and get the matching lines based on your search term.
+
+Now that you know these terminal basics, learn how you can automate common tasks with [bash scripts](bash_scripting.html).

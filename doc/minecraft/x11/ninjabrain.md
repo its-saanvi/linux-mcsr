@@ -1,6 +1,8 @@
-# NinjabrainBot
+# Ninjabrain Bot
 
-- Download the .jar for NinjabrainBot as per usual from [here](https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/latest).
+- This section goes over installing Ninjabrain Bot and creating a **desktop entry** for it, so you can easily open it from the start menu/your app launcher.
+  - On Wayland, please instead run Ninjabrain Bot through [waywall](../wayland/waywall.html) - this is done with the example config provided.
+- Download the .jar for Ninjabrain Bot as per usual from [here](https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/latest).
 - Lets take an example where the .jar file is downloaded into the **Downloads** folder.
 - Now to add it as an application to your list of applications, create this file with the following contents under `~/.local/share/applications/NinjabrainBot.desktop`
 

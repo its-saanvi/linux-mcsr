@@ -10,28 +10,29 @@
 
 # Post-Installation
 
-- [Get the things going](./post_install/post-install.md)
-  - [Terminal](./post_install/terminal_intro.md)
-    - [Basic Terminal usage](./post_install/terminal.md)
-    - [Scripting using Bash](./post_install/bash_scripting.md)
-  - [Graphics Drivers](./post_install/nvidia.md)
-  - [Java](./post_install/java.md)
-  - [OBS](./post_install/obs.md)
+- [Installing and updating](./post_install/post-install.md)
+  - [Terminal](./post_install/terminal.md)
+  - [Scripting using Bash](./post_install/bash_scripting.md)
+- [Graphics Drivers](./post_install/nvidia.md)
+- [Java](./post_install/java.md)
+- [OBS](./post_install/obs.md)
 
 # All the things Minecraft
 
-- [MultiMC](./minecraft/mmc.md)
-- [resetti, our macro](./minecraft/resetti.md)
-- [NinjabrainBot](./minecraft/ninjabrain.md)
-
-# OPTIMIZE! OPTIMIZE! OPTIMIZE!
-
-- [tmpfs](./perf/tmpfs.md)
-- [Jemalloc & GLFW](./perf/jemalloc_glfw.md)
+- [Setting up Minecraft](./minecraft/mmc.md)
+- [Speedrunning on Wayland](./minecraft/wayland.md)
+  - [waywall](./minecraft/wayland/waywall.md)
+  - [Configuring waywall](./minecraft/wayland/waywall-config.md)
+  - [Boat Eye on Wayland](./minecraft/wayland/boat-eye.md)
+  - [Keymap Rebinds on Wayland](./minecraft/wayland/rebinding.md)
+- [Speedrunning on X11](./minecraft/x11.md)
+  - [resetti](./minecraft/x11/resetti.md)
+  - [Ninjabrain Bot on X11](./minecraft/x11/ninjabrain.md)
+  - [Boat Eye on X11](./minecraft/x11/boat-eye.md)
+  - [Keymap Rebinds on X11](./minecraft/x11/rebinding.md)
+  - [Setting up i3](./minecraft/x11/i3.md)
 
 ---
 
 [Splitting audio for streams](./splitting-audio.md)
-[Setting up i3](./i3.md)
-[Boat Eye](./boat-eye.md)
-[Keymap Rebinds](./rebinding.md)
+[tmpfs](./tmpfs.md)

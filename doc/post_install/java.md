@@ -1,9 +1,9 @@
 # Java
 
 - Open up a terminal and type in these commands:
-- 
+
 ```bash
-sudo dnf install java-latest-openjdk
+sudo dnf install java-21-openjdk
 ```
 
 - This will install and setup the Java JDK for you.
@@ -14,7 +14,7 @@ sudo dnf install java-latest-openjdk
 java -jar <path/to/jarfile.jar>
 ```
 
-# GraalVM
+## GraalVM
 
 - GraalVM is a Java runtime which runs slower to start with, but greatly speeds up as time goes on. Using GraalVM is recommended for running Minecraft when using SeedQueue.
   - To download it, look [here](https://www.graalvm.org/downloads/). Make sure to select **Java 21** along with `Linux x64` for the platform.

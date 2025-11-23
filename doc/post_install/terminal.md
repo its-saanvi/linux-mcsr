@@ -1,8 +1,9 @@
 # Linux Terminal
 
 In this document, we will be learning the basics of the Linux Terminal. We will go through all the basic commands with examples for each.
+Using Linux without touching the terminal is very much possible, but understanding how to use it opens up many possibilities. For setting up Minecraft for speedrunning, we will have to run a few terminal commands, but the information below is more complementary than anything.
 
-# What is a terminal?
+## What is a terminal?
 
 It's a part of every system (irrespective of Operating System) that helps you control the system from a very stripped down level (without a Graphical User Interface). Programs or Commands can be run from here to perform some task on the system.
 
@@ -10,7 +11,7 @@ It is a very powerful tool and most of the time, GUI applications have these com
 
 You can open up a terminal in Plasma by hitting the keybind `Ctrl+Alt+T`.
 
-# Directories
+## Directories
 
 A directory is like a folder on your computer under which files or other folders can exist.
 
@@ -18,7 +19,7 @@ In Linux, everything on your system, including the hardware devices that you hav
 
 The `/` directory in your system is the root of your file system. It has everything that is on your storage that is mounted.
 
-[Here](https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/) are some of the directories in `/` and description of what they hold.
+[Here](https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/) are some of the directories in `/` and descriptions of what they hold.
 
 In the terminal type in this command
 
@@ -63,7 +64,7 @@ ls -la
 
 You can make directories inside your current directory using the `mkdir` command.
 
-```
+```bash
 mkdir test
 ```
 
@@ -77,14 +78,14 @@ mkdir -p test1/test11
 - If you want to remove all these directories that you created just now, you can use either `rmdir` or `rm`.
 - `rmdir` is used to delete directories that are empty.
 
-```
+```bash
 rmdir test
 ```
 
 - This would work because `test` is empty. But the same thing wouldn't work with `test1` as it has a `test11` directory inside it.
 - So we use the `rm` command with the `-r` flag to remove it.
 
-```
+```bash
 rm -r test1
 ```
 
@@ -92,30 +93,30 @@ rm -r test1
 - Remember, `-f` would remove everything even if it is read-only.
 - You can create a new file using the `touch` command.
 
-```
+```bash
 touch text.txt
 ```
 
 - You can view the contents of this file by using the `cat` command.
 
-```
+```bash
 cat text.txt
 ```
 
 - This wouldn't output anything as the file is empty. You can open this file right in the terminal by using `nano` which is a terminal based editor.
 
-```
+```bash
 nano text.txt
 ```
 
 - Once you are done editing the contents you can hit `Ctrl+S` and `Ctrl+X` to save and quit.
 - You can remove this file now with `rm`.
 
-```
+```bash
 rm text.txt
 ```
 
-# Super User Privileges
+## Super User Privileges
 
 - Super user privileges are admin privileges or elevated privileges given to a user in any UNIX system.
 - To execute commands as a super user, we use the `su` command. `su` stands for switch user.
@@ -143,7 +144,7 @@ sudo dnf update
 - Super user privileges are required for package manager commands on any Linux system.
 - So to install packages you will be prompted to give your password.
 
-# Pipe
+## Pipe
 
 - The Pipe symbol (`|`) is used to chain the outputs of certain commands into other commands.
 - There are several uses to this symbol, but the most common usage is to use it alongside the `grep` command.

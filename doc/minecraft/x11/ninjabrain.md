@@ -1,10 +1,16 @@
 # Ninjabrain Bot
 
-- This section goes over installing Ninjabrain Bot and creating a **desktop entry** for it, so you can easily open it from the start menu/your app launcher.
+- This section goes over installing Ninjabrain Bot on X11 and creating a **desktop entry** for it, so you can easily open it from the start menu/your app launcher.
   - On Wayland, please instead run Ninjabrain Bot through [waywall](../wayland/waywall.html) - this is done with the example config provided.
 - Download the .jar for Ninjabrain Bot as per usual from [here](https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/latest).
-- Lets take an example where the .jar file is downloaded into the **Downloads** folder.
-- Now to add it as an application to your list of applications, create this file with the following contents under `~/.local/share/applications/NinjabrainBot.desktop`
+- **NOTE:** [NBTrackr](https://github.com/qMaxXen/NBTrackr?tab=readme-ov-file#installation) can be used to see Ninjabrain Bot information easily, especially for single-monitor users.
+- To add it as an application to your list of applications, ensure the applications folder exists by running the following command:
+
+```bash
+mkdir -p ~/.local/share/applications/
+```
+
+- Then, create this file with the following contents under `~/.local/share/applications/NinjabrainBot.desktop`, replacing `<path/to/Ninjabrain-Bot-1.5.1.jar>` with the actual path to Ninjabrain Bot on your system.
 
 ```bash
 [Desktop Entry]
@@ -12,15 +18,7 @@ Encoding=UTF-8
 Type=Application
 Name=NinjabrainBot
 Icon=minecraft
-Exec=java -jar /home/<user_name>/Downloads/Ninjabrain-Bot-1.4.1.jar
+Exec=java -jar <path/to/Ninjabrain-Bot-1.5.1.jar>
 ```
 
-- If the directory does not exist, then make the directory/directories by executing the following command in a terminal
-
-```bash
-mkdir -p ~/.local/share/applications/
-```
-
-- Remember that the file name will change over versions. So as you update Ninjabrain Bot, you will have to change this file as well. Also, you will have to replace `<user_name>` with your username that you set during the install.
-- If you downloaded it elsewhere, then replace `/home/<user_name>/Downloads/Ninjabrain-Bot-1.4.1.jar` with the relevant path.
-- Now you can launch Ninjabrain Bot from your applications menu!
+- Now you can launch Ninjabrain Bot from your applications menu! Note that if you move the Ninjabrain Bot .jar file, you will have to edit this file as well.

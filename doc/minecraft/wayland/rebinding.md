@@ -59,6 +59,7 @@ key <AD03> { [ Armenian_pe, Armenian_PE ] }; // e > պ
 
 - After creating your layout, open your waywall config file in a text editor (`nano ~/.config/waywall/init.lua`).
 - Go to the `config.input` table and edit the `layout` option to "mc".
+<img width="194" height="63" alt="image" src="https://github.com/user-attachments/assets/7ee9c1e6-e56f-4d89-95cb-bd67170d39d5" />
 
 - Essentially, the `~/.config/xkb/symbols` folder is checked for a file named "mc", and switches to that layout if it's found.
 - If you want to have multiple layouts to swap between easily, copy your existing layout file in `~/.config/xkb/symbols` and give it a distinct name, then edit init.lua accordingly.

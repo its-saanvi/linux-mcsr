@@ -34,4 +34,5 @@
 
 # Optimize!
 
-[tmpfs](./tmpfs.md)
+- [Drag clicking](./drag-clicking.md)
+- [tmpfs](./tmpfs.md)

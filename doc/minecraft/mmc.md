@@ -13,7 +13,7 @@ sudo dnf install prismlauncher
 ```
 
 - This should install Prism Launcher - open the start menu and search for it.
-- Users on other distros should locate their distro on the [Prism download page](https://prismlauncher.org/download/?from=button#official-packages).
+- Users on other distros should locate their distro on the [Prism download page](https://prismlauncher.org/download/?from=button#official-packages) and follow the instructions.
   - **Avoid using Flatpak (Flathub)** where possible - you may run into issues running [waywall](wayland/waywall.html) later.
 
 ## Instance Setup

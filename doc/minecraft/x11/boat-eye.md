@@ -1,117 +1,112 @@
-# Boat Eye
+# Boat Eye on X11
 
-Setting up boat eye on Linux is not as easy as it is on Windows. You might see some super weird behaviour while using it just because X11 handles mouse movement much different than Windows. Make sure to follow instructions as closely as possible.
+Setting up boat eye on X11 is not as easy as it is on Windows. You might see some  weird behaviour while using it just because X11 handles mouse movement much different than Windows. Make sure to follow instructions as closely as possible.
 
-# Flagged WMs
+## Issues with certain WMs
 
 - There are some window managers that have trouble with out-of-bounds window resizing, or just window resizing in general:
+  - kwin (KDE Plasma Desktop Environment)
   - muffin (Linux Mint/Cinnamon Desktop Environment)
   - xfwm (XFCE Desktop Environment)
   - mutter (Gnome Desktop Environment)
-  - kwin (KDE Desktop Environment)
-- Before switching desktop environments/window managers, check if initially resizing the game window out of monitor bounds works for you. Set the `play_res` and each `alt_res` option in your resetti config to be 1 pixel larger than your monitor's bounds in either dimension.
+- Before switching desktop environments/window managers, check if initially resizing the game window out of monitor bounds works for you.
+  - Set the `play_res` and each `alt_res` option in your resetti config to be 1 pixel larger than your monitor's bounds in either dimension.
+  - Make sure to unmaximize/unfullscreen your game window (play in borderless if possible - on KDE, press Alt+F3 and disable window borders).
+    - On i3 or other tiling window managers, make sure the game window is undocked (make the window floating).
 
-# i3
-i3 is an X11 WM that has been tested a lot and it works very well with Fedora and all the tools. You can set it up in [this](../../i3.html) section of the guide.
+## i3
 
-# Setting up mouse drivers
+i3 is an X11 WM that has been tested a lot and it works very well with Fedora and all the tools. You can set it up in [this](i3.html) section of the guide.
 
-- Make sure that you have a Linux-compatible mouse (most Logitech and Razer mice should work. Make sure to check online if your mouse is Linux-compatible and is supported by any GUI software to configure DPI).
-- Setup your mouse drivers by downloading the appropriate driver packages.
-- Usually for Razer mice it is called `openrazer` for the GUI as well as the driver (I don't have a Razer mouse to cross-verify this. But do search around for the appropriate packages for your mouse).
-- Usually for Logitech mice it is called `piper` for the GUI and `libratbag` for the driver package.
+## Setting up mouse drivers
+
+- Check online if your mouse has software supported on Linux.
+  - For most Razer mice, install `openrazer` for the GUI as well as the driver.
+  - For most Logitech mice, install `piper` for the GUI and `libratbag` for the driver.
+  - If you don't have mouse software, you can either:
+    - switch back to Windows and set your DPI (and DPI toggle if you can/want) as necessary,
+    - OR use software like [maccel](https://github.com/Gnarus-G/maccel?tab=readme-ov-file#install) instead.
+      - Instead of inputting your mouse's DPI into Priffie's calculator in the next section, input **1**. The resulting New DPI is what you should use in the **Sens Multiplier** field in maccel.
 - After setting up your mouse drivers, make sure to open the GUI for setting up your mouse and check that your mouse is showing up on it.
 
-# Cursor speeds and DPI
+## Finding your sens values
 
-- First of all, install `xinput` from your distribution's packages. It is required for setting cursor speeds in X11.
-- Refer to [Priffie's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out the proper boat eye cursor speed, DPI and sensitivity and setup any Minecraft related setup as explained [here](https://youtu.be/G5XNCcgv4qE).
+- If you're setting up boat eye for the first time, refer to [Priffie's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out your boat eye cursor speed, DPI and sensitivity.
+  - You can get to options.txt by right clicking your instance in Prism Launcher > Folder > minecraft > options.txt.
+  - Leave cursor speed on 10 in the calculator, assuming you haven't changed pointer speed on Linux before (on Plasma, check if pointer speed is 0.00 in System Preferences > Mouse > select your mouse under the Device dropdown).
   ![image](https://github.com/its-saanvi/linux-mcsr/assets/94102031/08041a38-7909-495f-b90f-b453b14152ce)
-- To convert your cursor to the appropriate speed (refer to the EPP off row here), use the table above.
-- Set the DPI to the DPI that you took from the calculator in your mouse configuration application.
+- To convert the Windows cursor speed from Priffie's calculator to the appropriate Linux speed use the EPP off row in the table above.
+  - To get your resulting speed, take your value from the table above and subtract 1.
+    - For example, if the calculator gave you a cursor speed of 3, the corresponding value in the table is 1/8 (0.125), and your resulting speed would be 0.125 - 1 = **-0.875**.
+
+## Setting your sens values
+
+- Once you know your settings:
+  - Set the DPI to the DPI that you took from the calculator in your mouse configuration application.
+  - Set your Minecraft sensitivity in `minecraft/config/mcsr/standardsettings.json`, or `minecraft/options.txt` if you disabled/aren't using StandardSettings.
+- Install `xinput` using your package manager, to set your cursor speed accurately in X11.
 - Figure out the correct device ID for your mouse by running `xinput` in a terminal and analyzing the output.
 - Pick the correct id corresponding to your mouse and note it down.
-- Eg: `Logitech G102 LIGHTSYNC Gaming Mouse    	id=11	[slave  pointer  (2)]` Here the device id would be `11`.
+- Eg: `Logitech G102 LIGHTSYNC Gaming Mouse     id=11 [slave  pointer  (2)]` Here the device id would be `11`.
 - Now set the cursor speed by executing the following command in a terminal:
 
 ```bash
-xinput set-prop <device_id> 'Coordinate Transformation Matrix' <multiplier> 0 0 0 <multiplier> 0 0 0 1
+xinput set-prop <device_id> "libinput Accel Speed" <speed>
 ```
 
-- Here, replace `<device_id>` with the id and `<multiplier>` with the multiplier that you took before well.
-- Eg: `xinput set-prop 11 'Coordinate Transformation Matrix' 0.125 0 0 0 0.125 0 0 0 1 `
+- Here, replace `<device_id>` with the id and `<speed>` with the resulting speed you calculated from the table before.
+- In our example, the command would be `xinput set-prop 11 "libinput Accel Speed" -0.875`.
+- You should also disable mouse acceleration with the command:
 
-# wmctrl and xdotool
-
-- wmctrl and xdotool are both command-line utilities used for desktop automation on Linux.
-- Install `wmctrl` and `xdotool` from your distribution's packages.
-- This will be required to be used along with `Autokey` in order to function as the Tall Macro.
-
-# Autokey
-
-- Autokey, a desktop automation tool, is required in order to run our Tall Macro script.
-- Download `autokey` from your distribution's packages and open it.
-- Hit `Ctrl+Shift+N` in order to create a new script.
-- Enter the name that you want to give to the script on the left.
-- Go to the script tab that has the contents `#Enter script code` in it.
-- Paste in the below contents:
-
-```python
-#Enter script code
-import os
-
-zoom_w = 320 # Change this to the width you want Minecraft to be in after Tall Resolution is toggled on.
-zoom_h = 16384 # Do not change this unless you know what you are doing.
-zoom_x = 800 # Change this to the x coordinate you want Minecraft to go to when Tall Resolution is toggled on.
-zoom_y = (1080 - zoom_h) // 2 # Do not change this unless you know what you are doing.
-
-normal_w = 1920 # Change this to the width you want Minecraft to be in after Tall Resolution is toggled off.
-normal_h = 1080 # Change this to the height you want Minecraft to be in after Tall Resolution is toggled off.
-normal_x = 0 # Change this to the x coordinate you want Minecraft to go to when Tall Resolution is toggled off.
-normal_y = 0 # Change this to the y coordinate you want Minecraft to go to when Tall Resolution is toggled off.
-
-normal_multiplier = 0.125 # Change this to the multipler you took from the table.
-zoom_multiplier = 0.03125 # Change this to your pleasing by referring to the table (default = 0.0315 = cursor speed 1).
-device_id = 11 # Change this to the correct device id that you noted down before.
-
-# Do not change anything after this!
-os.system("xdotool getactivewindow getwindowgeometry | grep Geometry > /tmp/res")
-f = open("/tmp/res")
-cur_h = f.read().strip().split(':')[1].strip().split('x')[1]
-f.close()
-
-if(int(cur_h) == normal_h):
-    if "Minecraft" in window.get_active_title():
-        os.system(f"wmctrl -R ':ACTIVE:' -e 0,{zoom_x},{zoom_y},{zoom_w},{zoom_h}")
-        os.system(f"xinput set-prop {device_id} 'Coordinate Transformation Matrix' {zoom_multiplier} 0 0 0 {zoom_multiplier} 0 0 0 1")
-
-else:
-    os.system(f"wmctrl -R ':ACTIVE:' -e 0,{normal_x},{normal_y},{normal_w},{normal_h}")
-    os.system(f"xinput set-prop {device_id} 'Coordinate Transformation Matrix' {normal_multiplier} 0 0 0 {normal_multiplier} 0 0 0 1")
+```bash
+xinput set-prop <device_id> "libinput Accel Profile Enabled" 0 1 0
 ```
 
-- Change the appropriate settings as indicated in the comments.
-- Now go into the part that says `Hotkey` and click on the `Set` button.
-- Now in the dialog box, click on `Record a key combination` and press the keys you would want to toggle Tall Resolution and click on `Ok`. This is usually just the `J` key.
-- Now go into the part that says `Window Filter` and click on the `Set` button.
-- Now in the dialog box, in the text box that says `Regular expression to match:` type in `Minecraft` and click on `Ok`.
-- Now press the `Run Script` button and the hotkey should be activated. You can close the Autokey window now but it will still run in the system tray. You can suspend hotkeys by just right clicking on the systray entry for Autokey and hitting `Exit Autokey`.
-- **NOTE:** You should run Autokey and run the script each time you want to have Tall Macro.
-- You can also run custom scripts on every resolution toggle (eg. for setting DPI on toggling resolution for easier eye measurements by just adding a call to `os.system(<script_path>)` in the respective if/elif conditions, but this is out-of-scope of this document).
+- These settings will reset after rebooting your PC - if you're happy with how your mouse feels, save your configuration by creating and editing a libinput configuration file:
 
-# Eye Measuring Projector
+```bash
+sudo touch /etc/X11/xorg.conf.d/99-libinput-custom-config.conf
+sudo nano /etc/X11/xorg.conf.d/99-libinput-custom-config.conf
+```
+
+- Paste the following text into this file, replacing `<speed>` with your pointer speed calculated earlier and `<mousename>` with the name of your mouse as shown when running `xinput`.
+
+```bash
+Section "InputClass"
+  Identifier "PointerSpeed"
+  MatchDriver "libinput"
+  MatchProduct "<mousename>"
+  Option "AccelProfile" "flat"
+  Option "AccelSpeed" "<speed>"
+EndSection
+```
+
+## Window resizing with resetti
+
+- If you haven't already, install [resetti](resetti.html) to handle window resizing.
+- In your config, add an entry under your `alt_res` list with the dimensions `"384x16384+768,-7652"`.
+  - The position (`768,-7652` in this case) may be incorrect depending on your monitor setup, change it as necessary to position the game in the center of your monitor.
+- Then, add a hotkey to toggle this res using `ingame_toggle_res(n)`.
+- Check that the resizing works by running your resetti profile and pressing your hotkey ingame.
+  - If your game doesn't become thin and tall, see the [Issues with certain WMs](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#issues-with-certain-wms) section and double-check your config.
+
+## Eye Measuring Projector
+
 - There are two methods for displaying an eye measuring projector:
-  - You can use [xEyeSee by qMaxXen](https://github.com/qMaxXen/xEyeSee?tab=readme-ov-file#xeyesee) to display an eye measuring projector automatically when using Tall Macro. This method does not require OBS Studio. 
-  - The second method is to use OBS Studio. You can follow [Priffie's YouTube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup an OBS projector.
+  - You can use [xEyeSee by qMaxXen](https://github.com/qMaxXen/xEyeSee?tab=readme-ov-file#xeyesee) to display an eye measuring projector automatically when using Tall Macro. This method does not require OBS Studio.
+  - The second method is to use OBS Studio. You can follow [Priffie's YouTube tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup an OBS projector.
+    - Note that this projector won't automatically position itself beside your game unlike xEyeSee - you should instead drag the window behind your game manually.
 
-# Polling Rate
+## Polling Rate
 
-- Setting the polling rate to a lower value is nicer just because having a higher polling rate somehow affects how X11 behaves in response to specific cursor speeds.
+- Setting the polling rate to a lower value is nicer just because having a higher polling rate can affect how Minecraft and/or X11 behaves in response to specific cursor speeds.
 - Open your mouse configuration GUI and search for the tab that configures the polling rate of your mouse. Make sure to set it to a low value (such as 250Hz).
-- This is not a de-facto standard for all cursor speeds and it doesn't fix the issue for all mice. So if you have any issues please report it [here](https://github.com/its-saanvi/linux-mcsr/issues).
+- This is not a de-facto standard for all cursor speeds and it doesn't fix issues for all mice.
 
-# Finishing Up
+## Finishing Up
 
-- If you are using OBS for displaying the eye measuring projector, note that the projector can be set up by using a screen capture in OBS. Refer to [method 2](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#eye-measuring-projector).
-- **However**, this version of Tall Macro doesn’t automatically display the projector alongside the Tall Minecraft Window. You can, however, keep it open on another screen where it is always open or behind your Minecraft window and just peeking over at that to count pixels.
+- This covers all of the Linux-specific setup for boat eye - check out the following timestamps in osh's boat eye guide for the remaining setup:
+  - [2:32](https://youtu.be/HcrrfsHrR_c?t=152) for Ninjabrain Bot settings.
+  - [5:24](https://youtu.be/HcrrfsHrR_c?t=324) for actually performing a pixel perfect eye measurement.
+    - Note that toggling raw input as shown may introduce issues - toggling your mouse to a lower DPI is preferred instead.
 - Congratulations! We have successfully set up boat eye on Linux!

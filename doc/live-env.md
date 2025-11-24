@@ -5,6 +5,7 @@ The instructions below will show you how to boot into the Fedora live environmen
 ## Booting into the Live USB
 
 - After following the previous section to flash the ISO onto your USB stick, it is now time to install Fedora on your system.
+- Before rebooting, you might want to take note of some settings while you're still on Windows (i.e. Windows cursor speed).
 - Plug in your USB drive and restart your PC. Before it boots into Windows, it'll tell you what key to press to enter UEFI setup - usually it's Delete, Escape or one of the function keys (i.e. F2).
 - Once you're in the BIOS, make sure to have Secure Boot disabled and make sure to have CSM/BIOS mode disabled. These are usually under the menu labeled "Boot".
 - Now, look for an option labeled **Boot Override** or **Boot Options**, usually under the "Boot" or "Exit" menus. Under here, select the USB you just installed Fedora on to boot into it.

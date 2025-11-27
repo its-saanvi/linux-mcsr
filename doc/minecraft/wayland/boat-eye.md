@@ -118,3 +118,7 @@ Skip steps 1 and 2 if you've never setup boat eye before
     }
     ```
 - Save the file and reload your config with `swaymsg reload`
+
+### 3. General Boat Eye Setup
+- Complete the steps from 2:30 to 3:40 in [Osh's Boat Eye Setup Video](https://www.youtube.com/watch?v=HcrrfsHrR_c)
+- Set the Default boat mode in Ninjabrain Bot to "Green boat (with boat angle of 0)" 

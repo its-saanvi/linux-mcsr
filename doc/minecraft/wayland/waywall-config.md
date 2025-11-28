@@ -1,5 +1,7 @@
 # Configuring Waywall
 
+Waywall is configured in Lua, a lightweight and easy-to-learn scripting language. The config file for Waywall is located at the following path `~/.config/waywall/init.lua` by default. If you make any changes in your config file and wish to reload your config, simply save `init.lua` (This may not reload certain parts of your config; those may require restarting your Minecraft instance.).
+
 ## Using a premade config
 If you are new to Lua or prefer to start with a ready-made configuration, Gore (@goreay_12 on Discord) has published two templates you can use immediately.
 
@@ -9,8 +11,6 @@ Otherwise, if you would prefer to use a basic config that you can build from, wi
 [Waywall Barebones Config](https://github.com/arjuncgore/waywall_barebones_config)
 
 The community of speedrunners also publishes their own configuration files in `#configuration-showcase` in the Discord server. Feel free to check those out and ask any questions if you want to use any features from them.
-
-Waywall is configured in Lua, a lightweight and easy-to-learn scripting language. The config file for Waywall is located at the following path `~/.config/waywall/init.lua` by default. If you make any changes in your config file and wish to reload your config, simply save `init.lua` (This may not reload certain parts of your config; those may require restarting your Minecraft instance.).
 
 ## Profiles
 You can also load a config from any other Lua file in `~/.config/waywall/` by using the `--profile` argument in the wrapper command. This can be used to have multiple configurations for different instances. For example, setting your wrapper command to `waywall wrap --profile ranked --` reads a config from `~/.config/waywall/ranked.lua`.

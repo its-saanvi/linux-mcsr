@@ -25,6 +25,8 @@ Skip steps 1 and 2 if you've never setup boat eye before
     - If your mouse is in this [list of support devices](https://github.com/libratbag/libratbag/tree/master/data/devices) for libratbag, you can use either `piper` or `ratbagctl` to configure its DPI
     - If you have a Razer mouse, you can use `openrazer`
     - If your mouse doesn't have a linux driver, you will need to use Windows via your existing boot, a VM (if you're daring enough), or another device to configure its DPI
+        - or use software like [maccel](https://github.com/Gnarus-G/maccel?tab=readme-ov-file#install) to configure your mouse's DPI by hand
+
 
 ### 3. Get new Waywall and Boat Eye Sensitivities
 - Go to this website made for Esensat's [mcsr-calcsens](https://arjuncgore.github.io/mcsr-calcsens/)

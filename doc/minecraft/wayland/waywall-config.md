@@ -1,5 +1,15 @@
 # Configuring Waywall
 
+## Using a premade config
+If you are new to Lua or prefer to start with a ready-made configuration, Gore (@goreay_12 on Discord) has published two templates you can use immediately.
+
+If you want to use a generic config Gore made with a bunch of features that you can customize out of the box, check this one out: [Waywall Generic Config](https://github.com/arjuncgore/waywall_generic_config). (Many users refer to this as the generic config or the Gore config.)
+
+Otherwise, if you would prefer to use a basic config that you can build from, without anything fancy, consider this:
+[Waywall Barebones Config](https://github.com/arjuncgore/waywall_barebones_config)
+
+The community of speedrunners also publishes their own configuration files in `#configuration-showcase` in the Discord server. Feel free to check those out and ask any questions if you want to use any features from them.
+
 Waywall is configured in Lua, a lightweight and easy-to-learn scripting language. The config file for Waywall is located at the following path `~/.config/waywall/init.lua` by default. If you make any changes in your config file and wish to reload your config, simply save `init.lua` (This may not reload certain parts of your config; those may require restarting your Minecraft instance.).
 
 ## Profiles
@@ -30,13 +40,3 @@ config.actions = {}
 
 return config
 ```
-
-## Using a premade config
-If you are new to Lua or prefer to start with a ready-made configuration, Gore (@goreay_12 on Discord) has published two templates you can use immediately.
-
-If you want to use a generic config Gore made with a bunch of features that you can customize out of the box, check this one out: [Waywall Generic Config](https://github.com/arjuncgore/waywall_generic_config). (Many users refer to this as the generic config or the Gore config.)
-
-Otherwise, if you would prefer to use a basic config that you can build from, without anything fancy, consider this:
-[Waywall Barebones Config](https://github.com/arjuncgore/waywall_barebones_config)
-
-The community of speedrunners also publishes their own configuration files in `#configuration-showcase` in the Discord server. Feel free to check those out and ask any questions if you want to use any features from them.

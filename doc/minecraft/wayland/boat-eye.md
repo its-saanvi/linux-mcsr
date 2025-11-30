@@ -1,117 +1,126 @@
 # Boat Eye
 
-Setting up boat eye on Linux is not as easy as it is on Windows. You might see some super weird behaviour while using it just because X11 handles mouse movement much different than Windows. Make sure to follow instructions as closely as possible.
+For boat eye, Waywall users have 2 main methods to change your mouse's sensitivity.
+- Waywall sensitivity
+    - Uses [mcsr-calcsens](https://github.com/Esensats/mcsr-calcsens) (Thank you Esensats)
+    - This lets you change your sensitivity automatically when you change to tall resolution
+- Windows-like raw input/DPI toggle
+    - This mirrors what you would do 
+    - Quickest to setup if your mouse's DPI is already set
 
-# Flagged WMs
+## Waywall sensitivity
+Skip steps 1 and 2 if you've never setup boat eye before
 
-- There are some window managers that have trouble with out-of-bounds window resizing, or just window resizing in general:
-  - muffin (Linux Mint/Cinnamon Desktop Environment)
-  - xfwm (XFCE Desktop Environment)
-  - mutter (Gnome Desktop Environment)
-  - kwin (KDE Desktop Environment)
-- Before switching desktop environments/window managers, check if initially resizing the game window out of monitor bounds works for you. Set the `play_res` and each `alt_res` option in your resetti config to be 1 pixel larger than your monitor's bounds in either dimension.
+### 1. Find DPI and Minecraft Sens for Windows sens of 10
+- Go to qMaxXen's [Minecraft 360 Calculator](https://qmaxxen.github.io/mc-360-calc/)
+- Input your DPI, Minecraft Sens and Windows Sensitivity.
+- Note the outputted "Cursor Sensitivity" and "cm / 360"
+- Change the DPI on the website to the "Cursor Sensitivity" you noted, and change Windows Sens to 10
+- Note that the Cursor Sensitivity is the same as your original but "cm / 360" is different. You now need to manually change the "Minecraft Sens" to have the "cm / 360" match the original
+    - Someone may make a calculator to do this for you, but you can just do this by trial and error for now
+- Now note down the final "Minecraft Sens"
 
-# i3
-i3 is an X11 WM that has been tested a lot and it works very well with Fedora and all the tools. You can set it up in [this](i3.html) section of the guide.
+### 2. Configure your Mouse DPI
+- Using your mouse's software, change your DPI to the "Cursor Sensitivity" you noted, or the closest value
+    - If your mouse is in this [list of support devices](https://github.com/libratbag/libratbag/tree/master/data/devices) for libratbag, you can use either `piper` or `ratbagctl` to configure its DPI
+    - If you have a Razer mouse, you can use `openrazer`
+    - If your mouse doesn't have a linux driver, you will need to use Windows via your existing boot, a VM (if you're daring enough), or another device to configure its DPI
+        - or use software like [maccel](https://github.com/Gnarus-G/maccel?tab=readme-ov-file#install) to configure your mouse's DPI by hand
 
-# Setting up mouse drivers
 
-- Make sure that you have a Linux-compatible mouse (most Logitech and Razer mice should work. Make sure to check online if your mouse is Linux-compatible and is supported by any GUI software to configure DPI).
-- Setup your mouse drivers by downloading the appropriate driver packages.
-- Usually for Razer mice it is called `openrazer` for the GUI as well as the driver (I don't have a Razer mouse to cross-verify this. But do search around for the appropriate packages for your mouse).
-- Usually for Logitech mice it is called `piper` for the GUI and `libratbag` for the driver package.
-- After setting up your mouse drivers, make sure to open the GUI for setting up your mouse and check that your mouse is showing up on it.
+### 3. Get new Waywall and Boat Eye Sensitivities
+- Go to this website made for Esensat's [mcsr-calcsens](https://arjuncgore.github.io/mcsr-calcsens/)
+    - You could also use his original python program if you prefer
+- Input your Minecraft Sens from step 1, or if you skipped it, from options.txt
+- Set your Waywall Sensitivity to 1
+- Note down the outputs
 
-# Cursor speeds and DPI
+### 4. Setup your Config File (If you're using one of Gore's Configs, see below)
+- Set `config.input.sensitivity` to the "New normal sensitivity coefficient"
+- Use `waywall.set_sensitivity()` to change your sensitivity when moving to tall and back to normal based on your config
 
-- First of all, install `xinput` from your distribution's packages. It is required for setting cursor speeds in X11.
-- Refer to [Priffie's calculator](https://www.desmos.com/calculator/uld5u8glky) to figure out the proper boat eye cursor speed, DPI and sensitivity and setup any Minecraft related setup as explained [here](https://youtu.be/G5XNCcgv4qE).
-  ![image](https://github.com/its-saanvi/linux-mcsr/assets/94102031/08041a38-7909-495f-b90f-b453b14152ce)
-- To convert your cursor to the appropriate speed (refer to the EPP off row here), use the table above.
-- Set the DPI to the DPI that you took from the calculator in your mouse configuration application.
-- Figure out the correct device ID for your mouse by running `xinput` in a terminal and analyzing the output.
-- Pick the correct id corresponding to your mouse and note it down.
-- Eg: `Logitech G102 LIGHTSYNC Gaming Mouse    	id=11	[slave  pointer  (2)]` Here the device id would be `11`.
-- Now set the cursor speed by executing the following command in a terminal:
+### 4.1. Gore config setup
+- Generic Config
+    - Find this line in `config.lua`  
+    ```lua
+    local sens_change = { enabled = false, normal = 1.0, tall = 0.1 }
+    ```
+    - Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from mcsr-calcsens
+- Barebones Config
+    - Find these lines in `init.lua`
+    ```lua
+    -- ==== SENSITIVITIES ====
+    local normal_sens = 1
+    local tall_sens = 0.1
+    ```
+    - Set normal_sens and tall_sens to the sensitivity coefficients from mcsr-calcsens
 
-```bash
-xinput set-prop <device_id> 'Coordinate Transformation Matrix' <multiplier> 0 0 0 <multiplier> 0 0 0 1
-```
+### 5. General Boat Eye Setup
+- Complete the steps from 2:30 to 3:40 in [Osh's Boat Eye Setup Video](https://www.youtube.com/watch?v=HcrrfsHrR_c)
+- Set the Default boat mode in Ninjabrain Bot to "Green boat (with boat angle of 0)" 
 
-- Here, replace `<device_id>` with the id and `<multiplier>` with the multiplier that you took before well.
-- Eg: `xinput set-prop 11 'Coordinate Transformation Matrix' 0.125 0 0 0 0.125 0 0 0 1 `
+## Windows-like Setup
 
-# wmctrl and xdotool
+### 1. Convert Windows Sensitivity to Linux Sensitivity using the following table
 
-- wmctrl and xdotool are both command-line utilities used for desktop automation on Linux.
-- Install `wmctrl` and `xdotool` from your distribution's packages.
-- This will be required to be used along with `Autokey` in order to function as the Tall Macro.
+| Windows Sens | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+|:-----------------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| EPP off | -0.96875 | -0.9375 | -0.875 | -0.75 | -0.625 | -0.5 | -0.375 | -0.25 | -0.125 | 0.0 | 0.25 | 0.5 | 0.75 | 1.0 | 1.25 | 1.5 | 1.75 | 2.0 | 2.25 | 2.5 |
+| EPP on  | -0.9 | -0.8 | -0.7 | -0.6 | -0.5 | -0.4 | -0.3 | -0.2 | -0.1 | 0.0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0 |
 
-# Autokey
+### 2. Change sensitivity in your settings
 
-- Autokey, a desktop automation tool, is required in order to run our Tall Macro script.
-- Download `autokey` from your distribution's packages and open it.
-- Hit `Ctrl+Shift+N` in order to create a new script.
-- Enter the name that you want to give to the script on the left.
-- Go to the script tab that has the contents `#Enter script code` in it.
-- Paste in the below contents:
+#### KDE
+- Search mouse settings in krunner
+- Set "Pointer speed" to your new sensitivity
 
-```python
-#Enter script code
-import os
+#### Hyprland
+- Open your config file in a code editor (code, nano, vim)
+`~/.config/hypr/hyprland.conf`
+- If you haven't added your devices config yet, run `hyprctl devices` in your terminal and you'll see an output like this
+    ```bash
+    $ hyprctl devices
+        ...
 
-zoom_w = 320 # Change this to the width you want Minecraft to be in after Tall Resolution is toggled on.
-zoom_h = 16384 # Do not change this unless you know what you are doing.
-zoom_x = 800 # Change this to the x coordinate you want Minecraft to go to when Tall Resolution is toggled on.
-zoom_y = (1080 - zoom_h) // 2 # Do not change this unless you know what you are doing.
+        Input Device: turtle-beach-burst-ii-air-mouse
 
-normal_w = 1920 # Change this to the width you want Minecraft to be in after Tall Resolution is toggled off.
-normal_h = 1080 # Change this to the height you want Minecraft to be in after Tall Resolution is toggled off.
-normal_x = 0 # Change this to the x coordinate you want Minecraft to go to when Tall Resolution is toggled off.
-normal_y = 0 # Change this to the y coordinate you want Minecraft to go to when Tall Resolution is toggled off.
+        ...
+    ```
+- Then add the following block of code to the config file, setting the name to what you got from the previous step, and sensitivity to your new sensitivity
+    ```ini
+    # eg: for a windows sensitivity of 3
+    device {
+        name = turtle-beach-burst-ii-air-mouse
+        accel_profile = flat
+        sensitivity = -0.875
+        natural_scroll = false
+    }
+    ```
+- Save the file and reload your config with `hyprctl reload`
 
-normal_multiplier = 0.125 # Change this to the multipler you took from the table.
-zoom_multiplier = 0.03125 # Change this to your pleasing by referring to the table (default = 0.0315 = cursor speed 1).
-device_id = 11 # Change this to the correct device id that you noted down before.
+#### Sway
+- Open your config file in a code editor (code, nano, vim)
+`~/.config/sway/config`
+- If you haven't added your devices config yet, run `swaymsg -t get_inputs` in your terminal and you'll see an output like this
+    ```bash
+    $ swaymsg -t get_inputs
+        ...
+        Input device:Turtle Beach Burst II Air Mouse
+        Type: pointer
+        Identifier: 4341:20482:Turtle_Beach_Burst_II_Air_Mouse
+        ...
+    ```
+- Then add the following block of code to the config file, setting the input identifier to what you got from the previous step, and pointer_accel to your new sensitivity
+    ```ini
+    # eg: for a windows sensitivity of 3
+    input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
+        natural_scroll disabled
+        accel_profile "flat"
+        pointer_accel -0.875
+    }
+    ```
+- Save the file and reload your config with `swaymsg reload`
 
-# Do not change anything after this!
-os.system("xdotool getactivewindow getwindowgeometry | grep Geometry > /tmp/res")
-f = open("/tmp/res")
-cur_h = f.read().strip().split(':')[1].strip().split('x')[1]
-f.close()
-
-if(int(cur_h) == normal_h):
-    if "Minecraft" in window.get_active_title():
-        os.system(f"wmctrl -R ':ACTIVE:' -e 0,{zoom_x},{zoom_y},{zoom_w},{zoom_h}")
-        os.system(f"xinput set-prop {device_id} 'Coordinate Transformation Matrix' {zoom_multiplier} 0 0 0 {zoom_multiplier} 0 0 0 1")
-
-else:
-    os.system(f"wmctrl -R ':ACTIVE:' -e 0,{normal_x},{normal_y},{normal_w},{normal_h}")
-    os.system(f"xinput set-prop {device_id} 'Coordinate Transformation Matrix' {normal_multiplier} 0 0 0 {normal_multiplier} 0 0 0 1")
-```
-
-- Change the appropriate settings as indicated in the comments.
-- Now go into the part that says `Hotkey` and click on the `Set` button.
-- Now in the dialog box, click on `Record a key combination` and press the keys you would want to toggle Tall Resolution and click on `Ok`. This is usually just the `J` key.
-- Now go into the part that says `Window Filter` and click on the `Set` button.
-- Now in the dialog box, in the text box that says `Regular expression to match:` type in `Minecraft` and click on `Ok`.
-- Now press the `Run Script` button and the hotkey should be activated. You can close the Autokey window now but it will still run in the system tray. You can suspend hotkeys by just right clicking on the systray entry for Autokey and hitting `Exit Autokey`.
-- **NOTE:** You should run Autokey and run the script each time you want to have Tall Macro.
-- You can also run custom scripts on every resolution toggle (eg. for setting DPI on toggling resolution for easier eye measurements by just adding a call to `os.system(<script_path>)` in the respective if/elif conditions, but this is out-of-scope of this document).
-
-# Eye Measuring Projector
-- There are two methods for displaying an eye measuring projector:
-  - You can use [xEyeSee by qMaxXen](https://github.com/qMaxXen/xEyeSee?tab=readme-ov-file#xeyesee) to display an eye measuring projector automatically when using Tall Macro. This method does not require OBS Studio. 
-  - The second method is to use OBS Studio. You can follow [Priffie's YouTube Tutorial](https://youtu.be/_CXmCUYJbSk?si=2xyTiTuAnlpGdsDl) to setup an OBS projector.
-
-# Polling Rate
-
-- Setting the polling rate to a lower value is nicer just because having a higher polling rate somehow affects how X11 behaves in response to specific cursor speeds.
-- Open your mouse configuration GUI and search for the tab that configures the polling rate of your mouse. Make sure to set it to a low value (such as 250Hz).
-- This is not a de-facto standard for all cursor speeds and it doesn't fix the issue for all mice. So if you have any issues please report it [here](https://github.com/its-saanvi/linux-mcsr/issues).
-
-# Finishing Up
-
-- If you are using OBS for displaying the eye measuring projector, note that the projector can be set up by using a screen capture in OBS. Refer to [method 2](https://its-saanvi.github.io/linux-mcsr/boat-eye.html#eye-measuring-projector).
-- **However**, this version of Tall Macro doesn’t automatically display the projector alongside the Tall Minecraft Window. You can, however, keep it open on another screen where it is always open or behind your Minecraft window and just peeking over at that to count pixels.
-- Congratulations! We have successfully set up boat eye on Linux!
+### 3. General Boat Eye Setup
+- Complete the steps from 2:30 to 3:40 in [Osh's Boat Eye Setup Video](https://www.youtube.com/watch?v=HcrrfsHrR_c)
+- Set the Default boat mode in Ninjabrain Bot to "Green boat (with boat angle of 0)" 

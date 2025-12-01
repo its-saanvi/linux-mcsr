@@ -1,6 +1,6 @@
 # waywall
 
-- **waywall** is a Wayland compositor designed to run inside your existing Wayland session. It provides various convenient features for speedrunning, including but not limited to:
+- **waywall** is a Wayland compositor created by tesselslate designed to run inside your existing Wayland session. It provides various convenient features for speedrunning, including but not limited to:
   - Window resizing
   - Key remapping
   - Ninjabrain Bot support
@@ -13,7 +13,7 @@
 - To install waywall on Fedora, first install the dependencies with the following terminal command:
 
 ```bash
-dnf install libspng-devel cmake meson mesa-libEGL-devel luajit-devel libwayland-client libwayland-server libwayland-cursor libxkbcommon-devel xorg-x11-server-Xwayland-devel wayland-protocols-devel wayland-scanner
+sudo dnf install libspng-devel cmake meson mesa-libEGL-devel luajit-devel libwayland-client libwayland-server libwayland-cursor libxkbcommon-devel xorg-x11-server-Xwayland-devel wayland-protocols-devel wayland-scanner
 ```
 
 - Then, run the commands on this page of the [waywall documentation](https://tesselslate.github.io/waywall/00_installation.html#compiling).
@@ -22,7 +22,6 @@ dnf install libspng-devel cmake meson mesa-libEGL-devel luajit-devel libwayland-
 - Users on Debian-based distros may have trouble building waywall manually due to certain dependencies being far out of date. If you're having trouble, join the [Linux MCSR Discord server](https://discord.gg/fwZA2VJh7k).
 
 - Run `waywall` in a terminal to check it's installed properly.
-- Afterwards, visit the [next page of the documentation](https://tesselslate.github.io/waywall/00_setup.html) to set up your instance to launch within waywall.
-- If successful, launching your instance should result in the window title being "waywall" instead of the usual "Minecraft":
+- Afterwards, visit the [next page of the documentation](https://tesselslate.github.io/waywall/00_setup.html) to patch GLFW and set up your instance to launch within waywall.
 
-- If everything looks good, move to the [next section](waywall_config.html) to install an example config and learn how to customize it to your liking.
+- After this, move to the [next section](waywall_config.html) to install an example config and learn how to customize it to your liking.

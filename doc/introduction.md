@@ -9,7 +9,10 @@ If you're not already using Linux, you’re probably asking - why would you use 
 
 - Minecraft runs excellently on Linux, even better than on Windows.
 - On Windows, it's recommended to play in fullscreen to avoid input lag. This makes window resizing scripts slow and distracting, and makes other windows such as Ninjabrain Bot invisible unless you turn off fullscreen/resize the game. On Linux, however, you can use windowed or borderless windowed without any input lag, so you have the best of both worlds.
-- While this sounds nice, you should have more of a reason other than speedrunning to make the switch. Outside of Minecraft, Windows is quickly turning into a less favourable option for more and more things, with Windows 11 being bloated with unnecessary AI features and more invasive data collection, and is becoming more and more unstable as time goes on [¹](https://x.com/WindowsLatest/status/1979635547921646058) [²](https://www.youtube.com/watch?v=mlY2QjP_-9s).
+- Resize macros, magnifiers/projectors, keyboard layouts for search crafting, rebinding and the like are very clean when using [waywall](minecraft/wayland/waywall.html).
+
+While this sounds nice, you should have more of a reason other than speedrunning to make the switch.
+- Outside of Minecraft, Windows is quickly turning into a less favourable option for more and more things, with Windows 11 being bloated with unnecessary AI features and more invasive data collection, and is becoming more and more unstable as time goes on [¹](https://x.com/WindowsLatest/status/1979635547921646058) [²](https://www.youtube.com/watch?v=mlY2QjP_-9s).
 - Linux, with more support from developers and with things like Proton, is catching up to Windows for gamers, creatives, developers, and your average computer user.
 - If there’s something you still need Windows for though (notably Valorant/Fortnite/Adobe software), don’t worry - this guide will also go over dual-booting, so you can use both Windows and Linux interchangeably.
 

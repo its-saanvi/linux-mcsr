@@ -1,4 +1,4 @@
-# Setting up tmpfs
+# Drag clicking
 
 - By default, drag clicking will not work on Linux - it is set to ignore multiple successive fast clicks (similar to high debounce time).
 - To fix this, create a file with this content:

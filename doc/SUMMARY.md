@@ -32,7 +32,7 @@
   - [Keymap Rebinds on X11](./minecraft/x11/rebinding.md)
   - [Setting up i3](./minecraft/x11/i3.md)
 
-# Optimize!
+---
 
 - [Drag clicking](./drag-clicking.md)
 - [tmpfs](./tmpfs.md)

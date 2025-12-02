@@ -1,7 +1,7 @@
 # Introduction
 
 This section explains why using Linux for Minecraft speedrunning is ideal, choosing a Linux distro and desktop environment, and creating bootable media.
-If you're already using Linux, skip ahead to the [post-installation](post_install/post-install.html.html) section.
+If you're already using Linux, skip ahead to the [post-installation](post_install/post-install.html) section.
 
 ## Why Linux?
 

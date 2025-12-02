@@ -1,6 +1,6 @@
 # Speedrunning on Wayland
 
-- Wayland, as mentioned earlier, is newer and more up-to-date than X11. We recommend you first try speedrunning on Wayland, and switch to [X11](x11.html) if you face major problems.
+- Wayland, as mentioned earlier, is newer and more up-to-date than X11. We recommend you first try speedrunning on Wayland, and [switch to X11](x11.html) if you face major problems, such as poor FPS when using waywall.
 - On Fedora KDE Plasma, Wayland is the default backend.
 - Setup [waywall](./wayland/waywall.html) for Ninjabrain Bot support, window resizing, key remapping, magnifiers, and many other useful speedrunning utilities.
 - After setting up waywall:

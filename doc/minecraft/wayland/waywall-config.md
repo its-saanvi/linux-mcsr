@@ -50,3 +50,4 @@ Please see an existing config for pointers on how you can set this up manually.
 You can also load a config from any other Lua file in `~/.config/waywall/` by using the `--profile` argument in the wrapper command. This can be used if you want multiple configs for different instances. For example, setting your wrapper command to `waywall wrap --profile ranked --` reads a config from `~/.config/waywall/ranked.lua`.
 
 If your config is valid, and you properly followed the setup steps in the previous section, launching your instance should result in the window title being "waywall" instead of the usual "Minecraft":
+![image](https://github.com/user-attachments/assets/50549c81-dbbe-460d-a164-d116aa168531)

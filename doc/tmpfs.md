@@ -1,7 +1,9 @@
 # Setting up tmpfs
 
-You should get better performance while running wall by symlinking your instance world folders into `/tmp/mc/` and setting `/tmp` as a tmpfs volume.
+You should get better performance by symlinking your Minecraft world folders into `/tmp/mc/` and setting `/tmp` as a tmpfs volume.
 What that means is that files in these folders will be stocked in your memory and deleted on every reboot.
+
+**NOTE: Use this method IF AND ONLY IF you have some RAM to spare whilst resetting. DO NOT use it if you are using >70-80% of RAM during resetting as running the script in the background takes up memory as well!**
 
 - First define `/tmp` as a tmpfs volume by adding the following line to `/etc/fstab`
 
@@ -11,15 +13,15 @@ tmpfs /tmp tmpfs defaults,size=Xg 0 0
 
 Replace X with the number of gigabits you want to allocate, it won't use all of it if not needed but this sets a limit.
 
-- E.g. While running PrismLauncher (a fork of MultiMC), I would symlink `~/.local/share/PrismLauncher/instances/Instance1/.minecraft/saves` to `/tmp/mc/1/` and so on by using the command below for each, ensure you have deleted the `saves` folder beforehand.
+- E.g. While running Prism Launcher, I would symlink `~/.local/share/PrismLauncher/instances/Instance1/.minecraft/saves` to `/tmp/mc/1/` and so on by using the command below for each, ensure you have deleted the `saves` folder beforehand.
 
 ```bash
 ln -s  /tmp/mc/1 ~/.local/share/PrismLauncher/instances/Instance1/.minecraft/saves
 ```
 
-As the `/tmp` folder is cleared on every restart you need to setup a script to create the folder on every boot, if your distribution uses `systemd` you could do something like this:
+As the `/tmp` folder is cleared on every restart you need to setup a script to create the folder on every boot, if your distribution uses `systemd` (this includes Fedora) you could do something like this:
 
-- First create the file `/etc/rc.local` with the following content :
+- First create the file `/etc/rc.local` with the following content:
 
 ```bash
 #!/bin/bash
@@ -114,5 +116,3 @@ chmod +x script.sh
 ```bash
 ./script.sh
 ```
-
-- **NOTE: Use this method IF AND ONLY IF you have some RAM to spare with all the instances running and resetting. DO NOT use it if you are using >70-80% of RAM during resetting as running that script in the background takes up memory as well!**

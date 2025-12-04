@@ -1,36 +1,21 @@
 # Installation
 
-The instructions given below will install Fedora on your PC. Make sure to follow through the instructions here carefully.
+The instructions given below will install Fedora on your PC.
 
-# From Zero to Hero
+## From Zero to Hero
 
 - After testing out Fedora on the live environment, you are now ready to install it on your PC.
-- You can connect to your home network in order to install some updates during the installation. But this is optional, you can proceed to install Fedora even without connecting to the internet.
-- There are two options for you at this point. You can either
-  - Have an empty hard drive to install Fedora on it.
-  - Or have it be installed on your hard drive with Windows on it. (It will be installed alongside Windows so you need not worry. Just make sure you have enough space on that hard drive to have Fedora on it. Recommended size is about 100 GB of free space or above).
-- No matter what you pick above most steps remain the same.
-- Now on the Live Environment, search for **Install Fedora** by hitting the windows key and starting to type.
-- The first menu will open up asking you to pick your language.
-- Select your preferred language and click on **Continue**.
-- In this menu you can click on **Time & Date** and change it (by clicking on the map) if it doesn't show the right timezone for you (usually doesn't if you aren't connected to the internet).
-- You can also click on **Keyboard** to change the layout that you want to use (if it hasn't detected it correctly).
+- In the Live Environment, click the **Install to Hard Drive** icon on the desktop.
+- Run through the simple install steps. Make sure the correct disk is selected - if you shrunk your hard drive in Windows as shown in the [introduction](introduction.html) section, you should be able to move forward without any issues.
+  - If you didn't make space earlier, you can also let Fedora shrink/clear an existing partition to make space for the installation here.
+- When prompted, **enable the root account**.
+- You may encrypt your data when prompted if you like, this just means your data is more secure but you may have to type your password a bit more to access certain files.
+- Once the installer is complete, go to the start menu and restart your computer when you're ready.
 
-## Installation Destination 
+## First Boot
 
-- Click on the **Installation Destination** icon under the **SYSTEM** option.
-- The option you selected above matters only here. Be very sure that you have plugged in the right disks for installation. A gentle reminder to check and re-check them right now before continuing.
-  - If you chose to install Fedora on a separate empty hard drive, you will have that har drive directly listed under **Local Standard Disks**. You can click on it if it doesn't have a tick mark under it and click on the **Continue** button.
-  - If you chose to install Fedora alongside your Windows install, you will have to select the **Custom** option under **Storage Configuration** and hit the **Continue** button. Now you will be redirected to a new GUI where you can click on the drop down that says **Btrfs** and select **ext4** instead. Now click on **Click here to create them automatically** and the installer will try to do it automatically for you. Then click on the **Done** button.
+- After rebooting, you should boot into your Fedora installation. If you're dual-booting, you'll get the option to pick either Fedora or Windows. Proceed with Fedora.
+- Once booted, you can remove your USB. You will be prompted to **Start Setup** and set your username and password among other things.
+- When prompted, you should enable third-party repositories during the setup. This will be required to install some software that might be proprietary but necessary for normal use.
 
-# Continuation of Installation
-
-- Click on **Begin Installation** and the installation of Fedora onto whatever disk/partition you chose will begin.
-- Once it is done, click on the **Finish Installation** button. This will close the installer.
-- Then you can click on the top right status tray and click on the power button to reboot the system. Make sure to reboot with the USB removed.
-- After rebooting, you will be prompted to **Start Setup** and setup your username and password.
-- Make sure to also enable third-party repositories during the setup. This will be required to install some software that might be proprietary but you might need them on a daily basis.
-- Now logout of the system, and in the login screen click on the cog icon and choose the option that says **GNOME on Xorg** as Fedora defaults to a Wayland session on the first boot and [resetti](https://github.com/tesselslate/resetti) doesn't function on Wayland as of now. Now you can log back into your system.
-- Also make sure to update your system as soon as you log back in by running the command `sudo dnf update` in a terminal.
-
-Your Linux installation is now complete! We can now proceed with the post installation configuration.
+Your Linux installation is now complete! We can now proceed with the [post-installation](post_install/post-install.html) steps.

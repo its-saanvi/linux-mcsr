@@ -1,26 +1,19 @@
 # Live Environment
 
-The instructions given below will be the setup step to start installing Fedora on your hard drive.
+The instructions below will show you how to boot into the Fedora live environment on your USB stick.
 
-# Booting into the Live USB
+## Booting into the Live USB
 
-- After going through and installing the ISO onto your USB stick, it is now time to install Fedora on your system.
-- Plug in the USB stick to your PC.
+- After following the previous section to flash the ISO onto your USB stick, it is now time to install Fedora on your system.
+- Before rebooting, you might want to take note of some settings while you're still on Windows (i.e. Windows cursor speed).
+- Plug in your USB drive and restart your PC. Before it boots into Windows, it'll tell you what key to press to enter UEFI setup - usually it's Delete, Escape or one of the function keys (i.e. F2).
+- Once you're in the BIOS, make sure to have Secure Boot disabled and make sure to have CSM/BIOS mode disabled. These are usually under the menu labeled "Boot".
+- Now, look for an option labeled **Boot Override** or **Boot Options**, usually under the "Boot" or "Exit" menus. Under here, select the USB you just installed Fedora on to boot into it.
+  - If you can't find Boot Options then changing the **Boot Order** is an alternative. Under here, reorder the options to have the USB stick at the top. Now, select Exit & save changes, and wait for your system to reboot.
+- You will be greeted with a boot screen listing some boot options initially, just hit enter on the first option to boot into the **live environment**.
 
-## Figuring out the BIOS key for your motherboard
+## Testing the Live Environment
 
-- Mind you, this step is very convoluted and varies from one motherboard manufacturer to the other. So, googling about this is the best way to find out what your BIOS key is.
-- Usually its one of the function keys or the Escape key.
-- You can try spamming those keys a couple of times just as you start up your computer until you get to the BIOS menu.
-- Under the BIOS menu, look for an option that talks about **Boot Options**.
-  Under here, select the USB you just installed Fedora on and the boot should continue from there and drop you into a live environment of Fedora.
-- If you can't find **Boot Options** then changing the **Boot Order** is an alternative. Under here, reorder the options to have the USB stick at the top. Now save and quit and it should automatically reboot into a live environment of Fedora. You will be greeted with a boot screen listing some boot options initially, just hit enter on the first option to boot into Live USB mode.
-- If you have any issues that you come across at this point, don't think twice to open a new issue on this regard. You will be greeted with a boot screen listing some boot options initially, just hit enter on the first option to boot into Live USB mode.
-
-# Testing on the Live Environment
-
-- Now that you have the Live Environment running, you can test out the OS partially here.
-- On the first dialog, click on **Not Now** to test out the live environment.
-- Linux, given its versatility, doesn't require you to install the system on your physical hardware in order to test it. So whatever you do on here will not affect what you have already on your system.
-- But of course, nothing that you do here would be reflected in your physical install as well. So feel free to mess around until you feel comfortable enough.
-- Make yourself comfortable with the workflow of the system and when you are done, you can proceed with the installation procedure.
+- Now that you have the Live Environment running, you can test out Fedora running the KDE Plasma desktop environment.
+- Linux, given its versatility, doesn't require you to install the system on your physical hardware in order to test it, so whatever you do on here will not affect what you have already on your system. Feel free to mess around!
+- When you are done, you can proceed with the [installation](installation.html) procedure.

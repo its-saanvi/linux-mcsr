@@ -41,7 +41,7 @@ xkb_symbols "basic" {
 ```
 
 - Let's break down how the layout file works.
-- The comment code on the right (the text after the `//`) shows which key is being mapped to what character.
+- In the above example, the comment code on the right (the text after the `//`) shows which key is being mapped to what character.
 
 ```xkb
 key <AD03> { [ Armenian_pe, Armenian_PE ] }; // e > պ
@@ -49,7 +49,8 @@ key <AD03> { [ Armenian_pe, Armenian_PE ] }; // e > պ
 
 - This line remaps lowercase `e` to the `պ` character, and uppercase `E` to the `Պ` character.
   - `key <AD03>` refers to the `e` key.
-    - Most of the common keys remapped for search crafting (i.e. keys close to the WASD cluster) are listed here, you can add keys further on the right by simply copying the key before it and increasing the number accordingly.
+    - Most of the common keys remapped for search crafting (i.e. keys close to the WASD cluster) are listed in the above example layout, you can add keys further on the right by simply copying the key before it and increasing the number accordingly.
+    - Some keys (i.e. TLDE, CAPS, LALT in the above example) are named much more clearly.
   - `Armenian_pe` refers to the `պ` character.
   - `Armenian_PE` refers to the `Պ` character.
   - [Here is the list of valid names for characters](https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap).
@@ -59,6 +60,7 @@ key <AD03> { [ Armenian_pe, Armenian_PE ] }; // e > պ
 
 - After creating your layout, open your waywall config file in a text editor (`nano ~/.config/waywall/init.lua`).
 - Go to the `config.input` table and edit the `layout` option to "mc".
+
 ![image](https://github.com/user-attachments/assets/7ee9c1e6-e56f-4d89-95cb-bd67170d39d5)
 
 - Essentially, the `~/.config/xkb/symbols` folder is checked for a file named "mc", and switches to that layout if it's found.

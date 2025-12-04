@@ -7,6 +7,9 @@ The instructions given below will install Fedora on your PC.
 - After testing out Fedora on the live environment, you are now ready to install it on your PC.
 - In the Live Environment, click the **Install to Hard Drive** icon on the desktop.
 - Run through the simple install steps. Make sure the correct disk is selected - if you shrunk your hard drive in Windows as shown in the [introduction](introduction.html) section, you should be able to move forward without any issues.
+  - If you didn't make space earlier, you can also let Fedora shrink/clear an existing partition to make space for the installation here.
+- When prompted, **enable the root account**.
+- You may encrypt your data when prompted if you like, this just means your data is more secure but you may have to type your password a bit more to access certain files.
 - Once the installer is complete, go to the start menu and restart your computer when you're ready.
 
 ## First Boot

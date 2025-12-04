@@ -1,6 +1,6 @@
 # waywall
 
-- **waywall** is a Wayland compositor created by tesselslate designed to run inside your existing Wayland session. It provides various convenient features for speedrunning, including but not limited to:
+- **waywall** is a Wayland compositor designed to run inside your existing Wayland session. It provides various convenient features for speedrunning, including but not limited to:
   - Window resizing
   - Key remapping
   - Ninjabrain Bot support

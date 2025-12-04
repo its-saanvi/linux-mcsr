@@ -1,6 +1,6 @@
 # resetti
 
-- **resetti** is an X11 app created by tesselslate mainly used for **resizing the Minecraft window**.
+- **resetti** is an X11 app mainly used for **resizing the Minecraft window**.
   - If you're using **Wayland**, please use [waywall](../wayland/waywall.html) instead.
 - Go to [this](https://github.com/tesselslate/resetti/releases/latest) link to download the latest version of resetti.
   - On Fedora, download and run the `.rpm` file to install resetti. Once installed, check that it's working by opening a terminal and running `resetti version`.

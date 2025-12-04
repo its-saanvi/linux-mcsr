@@ -47,4 +47,5 @@ While this sounds nice, you should have more of a reason other than speedrunning
 - Press Windows+R, and type `diskmgmt.msc`. Here, you should see all of your disks - ideally you have a separate disk to install Fedora to, but usually we install it alongside Windows on the `C:/` disk.
 - If using the `C:/` disk, right click the main (largest) partition on the disk and select **Shrink Volume**.
 - If you can spare around **50 GB** (around 50000 MB) for Fedora, then do so. If you're sure you have the free space on the disk but it isn't letting you shrink it enough, consider using a third-party app like [MiniDisk Partition Wizard](https://www.partitionwizard.com/free-partition-manager.html) to shrink the volume instead.
+- Leave this as empty space - do not make a new partition after shrinking.
 - You can shrink the volume further after installing Fedora if you need more space - for now, shrink it as much as possible, then move to the [live environment](live-env.html) section to finally install Fedora.

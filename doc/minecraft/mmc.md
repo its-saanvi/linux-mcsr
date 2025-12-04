@@ -33,6 +33,7 @@ sudo dnf install prismlauncher
   - To ensure Minecraft runs with jemalloc, go to Prism > Settings > Environment Variables. Add a new environment variable with the name `LD_PRELOAD`. Under "Value", enter the path to jemalloc we found earlier.
 - **NVIDIA users** should add another environment variable named `__GL_THREADED_OPTIMIZATIONS` and set its value to 0. With driver versions greater than 525, not having this variable set may cause crashes, or make preemptive navigation very inconsistent because of a driver-side optimization to the Minecraft renderer (colloquially known as "preemptive bug").
 - Your environment variables should look something like this:
+
   ![image](https://github.com/user-attachments/assets/bbfeb4ab-2201-41d1-bc94-9eb3aa2f7088)
 - Finally, users on dual-GPU setups (i.e. laptops with integrated and dedicated graphics) should ensure Minecraft runs with dedicated graphics.
   - In Prism, go to Settings > Minecraft > Tweaks > Check **Use discrete GPU**.

@@ -6,7 +6,7 @@
 
 - The instructions start from the very basics and explain each step verbosely. Feel free to skip some steps if you know what you are doing.
 - You can get started right [here](index.html).
-- If you have any issues, feel free to ask for help in the #public-help channel in the [Linux MCSR Discord server](https://discord.gg/fwZA2VJh7k).
+- If you have any issues, feel free to ask for help in the #public-help channel in the [Linux MCSR Discord server](https://discord.gg/3tm4UpUQ8t).
 
 ## Thanks
 
@@ -14,7 +14,7 @@
 - [tesselslate](https://github.com/tesselslate) for even making MCSR on Linux possible.
 - [Nish](https://github.com/ohnishant) for making the mdbook frontend setup for the guide.
 - [draconix](https://www.twitch.tv/draconix6) and [Gore](https://www.twitch.tv/goreay_) for helping to update and maintain the guide.
-- All the nerds in the [Linux MCSR discord](https://discord.gg/fwZA2VJh7k) who helped me through my stupidity.
+- All the nerds in the [Linux MCSR discord](https://discord.gg/3tm4UpUQ8t) who helped me through my stupidity.
 - All contributors and authors of all the docs, websites or applications that this guide references, namely:
   - tesselslate
   - qMaxXen

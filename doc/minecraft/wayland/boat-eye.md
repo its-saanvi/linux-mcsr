@@ -23,7 +23,7 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 - Go to the [Minecraft 360 Calculator](https://qmaxxen.github.io/mc-360-calc/).
 - Input your DPI, Minecraft Sens and Windows Sensitivity.
 - Note the outputted "Cursor Sensitivity" and "cm / 360".
-- Change the DPI on the website to the "Cursor Sensitivity" you noted, and change Windows Sens to 10
+- Change the DPI on the website to the "Cursor Sensitivity" you noted, and change Windows Sens to 10.
 - Note that the Cursor Sensitivity is the same as before, but "cm / 360" is different. Change the "Minecraft Sens" until the "cm / 360" matches the original.
 - Note down the final DPI and Minecraft sens.
 
@@ -34,7 +34,7 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
   - If you have a Razer mouse, install and use `openrazer`.
   - If your mouse doesn't have a Linux driver, you will need to boot back into Windows, use a Windows VM (if you're daring enough), or another device with Windows installed to configure its DPI.
     - OR use software like [maccel](https://github.com/Gnarus-G/maccel?tab=readme-ov-file#install) instead.
-      - In the **Sens Multiplier** field in maccel, input the new DPI you found in the previous section divided by your current DPI.
+      - In the **Sens Multiplier** field in maccel, input the new DPI you found in the previous section divided by 1000. For example, if your new DPI was 350, change the Sens Multiplier to 0.350.
   - Note that not using the exact DPI will not affect the accuracy of your eye measurements.
 
 ### 1.3: Get new waywall and boat eye sensitivities

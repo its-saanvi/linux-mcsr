@@ -6,6 +6,7 @@ The following chapters will go through the first things you should do after inst
 
 - The primary method of downloading and installing software on Linux is using the **package manager** in the terminal. In Plasma, you can open a terminal window with `Ctrl+Alt+T`, or open the start menu and search for **Konsole**.
 - The terminal command for installing most things is `sudo dnf install`, followed by a list of apps or things you want to install.
+  - **NOTE:** Running commands with `sudo` will run them with **admin privileges**. Be careful when running random commands with `sudo`, especially ones like `rm -rf`.
 - To update your system, and anything else you’ve installed with dnf, simply run `sudo dnf update`.
   - **Run this now** to ensure everything is up to date. It's a good idea to update things somewhat frequently.
 - You can use `sudo dnf search` to check if something you want to install can be installed with dnf.

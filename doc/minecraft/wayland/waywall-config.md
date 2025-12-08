@@ -43,7 +43,7 @@ return config
 ```
 
 Note that the next section regarding boat eye setup is only practical if you resize Minecraft to a tall resolution, and use a mirror to magnify the game further.
-Please see an existing config for pointers on how you can set this up manually.
+Please see an existing config for pointers on how you can set this up.
 
 ## Profiles
 

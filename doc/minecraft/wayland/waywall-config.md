@@ -12,7 +12,7 @@ It is recommended to use a pre-made config, with window resizing and magnifiers 
 - If you want to use a generic config with a bunch of features that you can customize out of the box, check out the [generic config](https://github.com/arjuncgore/waywall_generic_config). (Many users refer to this as the generic config or the Gore config.)
 - If you would prefer to use a basic config that you can build from without anything fancy, check out the [barebones config](https://github.com/arjuncgore/waywall_barebones_config).
 
-The Linux MCSR community also publishes their own configuration files in `#configuration-showcase` in the [Discord server](https://discord.gg/fwZA2VJh7k). Feel free to check those out, and ask any questions in the `#public-help` channel.
+The Linux MCSR community also publishes their own configuration files in `#configuration-showcase` in the [Discord server](https://discord.gg/3tm4UpUQ8t). Feel free to check those out, and ask any questions in the `#public-help` channel.
 
 ## Creating/editing your config file
 

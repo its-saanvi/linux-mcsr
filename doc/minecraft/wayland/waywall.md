@@ -19,7 +19,7 @@ sudo dnf install libspng-devel cmake meson mesa-libEGL-devel luajit-devel libway
 - Then, run the commands on this page of the [waywall documentation](https://tesselslate.github.io/waywall/00_installation.html#compiling).
 
 - On Arch Linux, [you can install waywall through the AUR](https://aur.archlinux.org/packages/waywall-working-git).
-- Users on Debian-based distros may have trouble building waywall manually due to certain dependencies being far out of date. If you're having trouble, join the [Linux MCSR Discord server](https://discord.gg/fwZA2VJh7k).
+- Users on Debian-based distros may have trouble building waywall manually due to certain dependencies being far out of date. If you're having trouble, join the [Linux MCSR Discord server](https://discord.gg/3tm4UpUQ8t).
 
 - Run `waywall` in a terminal to check it's installed properly.
   - Use the absolute path to the waywall executable if this doesn't work (i.e. if you built waywall in `/home/username/waywall/build/waywall`, run `/home/username/waywall/build/waywall/waywall`).

@@ -36,10 +36,9 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 
 ### 1.3: Get new waywall and boat eye sensitivities
 
-- Go to [this website made for mcsr-calcsens](https://arjuncgore.github.io/mcsr-calcsens/).
-  - You could also use the [original Python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
-- Set Waywall Sensitivity to 1.
-- Input the new Minecraft sens you got from step 1.1.
+- Go back to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
+  - You could use the [original mcsr-calcsens python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
+- Input the new Minecraft sens you got from step 1.1 on "MCSR Calcsens Online".
   - If you skipped step 1.1, instead input your current Minecraft sens from options.txt.
     - You can find your current options.txt sensitivity by right clicking your instance in Prism Launcher > Folder > minecraft > options.txt > searching for `mouseSensitivity`.
 - Note down the outputs.

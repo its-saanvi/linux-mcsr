@@ -20,12 +20,9 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 
 ### 1.1: Find DPI and Minecraft sens for Windows sens of 10
 
-- Go to the [Minecraft 360 Calculator](https://qmaxxen.github.io/mc-360-calc/).
-- Input your DPI, Minecraft Sens and Windows Sensitivity.
-- Note the outputted "Cursor Sensitivity" and "cm / 360".
-- Change the DPI on the website to the "Cursor Sensitivity" you noted, and change Windows Sens to 10.
-- Note that the Cursor Sensitivity is the same as before, but "cm / 360" is different. Change the "Minecraft Sens" until the "cm / 360" matches the original.
-- Note down the final DPI and Minecraft sens.
+- Go to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
+- Input your DPI, Minecraft Sensitivity and Windows Sensitivity on the "Reverse Boat Eye Calculator".
+- Note down the new DPI and Minecraft sens.
 
 ### 1.2: Configure your mouse DPI
 
@@ -39,10 +36,9 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 
 ### 1.3: Get new waywall and boat eye sensitivities
 
-- Go to [this website made for mcsr-calcsens](https://arjuncgore.github.io/mcsr-calcsens/).
-  - You could also use the [original Python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
-- Set Waywall Sensitivity to 1.
-- Input the new Minecraft sens you got from step 1.1.
+- Go back to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
+  - You could use the [original mcsr-calcsens python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
+- Input the new Minecraft sens you got from step 1.1 on "MCSR Calcsens Online".
   - If you skipped step 1.1, instead input your current Minecraft sens from options.txt.
     - You can find your current options.txt sensitivity by right clicking your instance in Prism Launcher > Folder > minecraft > options.txt > searching for `mouseSensitivity`.
 - Note down the outputs.

@@ -11,15 +11,15 @@
 ## Installation From Prebuilt Binaries
 
 - To install waywall on Fedora:
- - Install the latest .rpm from the [waywall github](https://github.com/tesselslate/waywall/tags).
- - After installing the .rpm, you should be able to open it through your file manager, where you will then have an option to install it
+  - Install the latest .rpm from the [waywall github](https://github.com/tesselslate/waywall/tags).
+  - After installing the .rpm, you should be able to open it through your file manager, where you will then have an option to install it
 
 - To Install waywall on Debian
- - Install the latest .deb from the [waywall github](https://github.com/tesselslate/waywall/tags).
- - After installing the .deb, you should be able to open it through your file manager, where you will then have an option to install it
+  - Install the latest .deb from the [waywall github](https://github.com/tesselslate/waywall/tags).
+  - After installing the .deb, you should be able to open it through your file manager, where you will then have an option to install it
   
 - On Arch Linux, [you can install waywall through the AUR](https://aur.archlinux.org/packages/waywall-working-git).
- - You may also download the latest .tar.zst from the [waywall github](https://github.com/tesselslate/waywall/tags).
+  - You may also download the latest .tar.zst from the [waywall github](https://github.com/tesselslate/waywall/tags).
 
 ## Installation From Source
 

@@ -21,6 +21,8 @@
 - On Arch Linux, [you can install waywall through the AUR](https://aur.archlinux.org/packages/waywall-working-git).
   - You may also download the latest .tar.zst from the [waywall github](https://github.com/tesselslate/waywall/tags).
 
+- **NO MATTER WHAT** your distro is, if you downloaded from prebuilt binary or AUR, your wrapper command should just be `waywall wrap --`, not having a path.
+
 ## Installation From Source
 
 - To install waywall on Fedora:

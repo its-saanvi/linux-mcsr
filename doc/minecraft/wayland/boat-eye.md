@@ -18,23 +18,13 @@ For boat eye, Wayland users have 2 main methods to change your mouse's sensitivi
 
 Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 
-### 1.1: Find DPI and Minecraft sens for Windows sens of 10
+### 1.1: Find Minecraft sens for Windows sens of 10
 
 - Go to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
 - Input your DPI, Minecraft Sensitivity and Windows Sensitivity on the "Reverse Boat Eye Calculator".
-- Note down the new DPI and Minecraft sens.
+- Note down the Minecraft sens.
 
-### 1.2: Configure your mouse DPI
-
-- Using your mouse's software, change your DPI to the final DPI you noted in the previous section, or the closest possible value.
-  - If your mouse is in [this list of devices](https://github.com/libratbag/libratbag/tree/master/data/devices), install and use either `piper` or `ratbagctl` to configure its DPI.
-  - If you have a Razer mouse, install and use `openrazer`.
-  - If your mouse doesn't have a Linux driver, you will need to boot back into Windows, use a Windows VM (if you're daring enough), or another device with Windows installed to configure its DPI.
-    - OR use software like [maccel](https://github.com/Gnarus-G/maccel?tab=readme-ov-file#install) instead.
-      - In the **Sens Multiplier** field in maccel, input the new DPI you found in the previous section divided by 1000. For example, if your new DPI was 350, change the Sens Multiplier to 0.350.
-  - Note that not using the exact DPI will not affect the accuracy of your eye measurements.
-
-### 1.3: Get new waywall and boat eye sensitivities
+### 1.2: Get new waywall and boat eye sensitivities
 
 - Go back to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
   - You could use the [original mcsr-calcsens python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
@@ -43,14 +33,14 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
     - You can find your current options.txt sensitivity by right clicking your instance in Prism Launcher > Folder > minecraft > options.txt > searching for `mouseSensitivity`.
 - Note down the outputs.
 
-### 1.4: Setup your waywall config
+### 1.3: Setup your waywall config
 
 - **If you're using one of Gore's pre-made configs, see the section below.**
 - If you're using your own config:
   - Set `config.input.sensitivity` to the "New normal sensitivity coefficient" given by mcsr-calcsens.
   - Use `waywall.set_sensitivity()` to change your sensitivity when moving to tall and back to normal.
 
-### 1.4.1: Gore config setup
+### 1.3.1: Gore config setup
 
 - Generic Config
   - Find this line in `config.lua`:
@@ -71,7 +61,7 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 
   - Set normal_sens and tall_sens to the sensitivity coefficients from mcsr-calcsens.
 
-### 1.5: General boat eye setup
+### 1.4: General boat eye setup
 
 - Set your Minecraft sensitivity to what was given by mcsr-calcsens.
   - Remember to update your sensitivity in `minecraft/config/mcsr/standardsettings.json` if you're using StandardSettings, otherwise just change `minecraft/options.txt`.
@@ -95,12 +85,18 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 - With the value from the table above, change your pointer speed in your compositor's configuration.
 - Below are some examples for some common compositors.
 
-#### KDE
-
+<details>
+<summary>KDE</summary>
+<br>
 - Press Alt+F2 to open KRunner, and search for "mouse settings".
 - Set "Pointer speed" to your new sensitivity.
+</details>
 
-#### Hyprland
+<br />
+
+<details>
+<summary>Hyprland</summary>
+<br>
 
 - Open the Hyprland config file in a text editor: `~/.config/hypr/hyprland.conf`.
 - If you haven't added your devices config yet, run `hyprctl devices` in your terminal and you'll see an output like this:
@@ -127,8 +123,13 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
     ```
 
 - Save the file and reload your config with `hyprctl reload`.
+</details>
 
-#### Sway
+<br />
+
+<details>
+<summary>Sway</summary>
+<br>
 
 - Open your config file in a text editor: `~/.config/sway/config`.
 - If you haven't added your devices config yet, run `swaymsg -t get_inputs` in your terminal and you'll see an output like this:
@@ -154,6 +155,7 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
     ```
 
 - Save the file and reload your config with `swaymsg reload`.
+</details>
 
 ### 2.3: General boat eye setup
 

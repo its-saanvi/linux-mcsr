@@ -2,76 +2,27 @@
 
 Before setting up boat eye, first setup [waywall](waywall.html) for window resizing, magnifiers and sensitivity changes.
 
-For boat eye, Wayland users have 2 main methods to change your mouse's sensitivity:
+## What is Boat Eye?
 
-- Waywall sensitivity
-  - Uses [mcsr-calcsens](https://github.com/Esensats/mcsr-calcsens).
-  - Lets you decrease your sensitivity automatically when you change to tall resolution, or manually with either a mouse button or keyboard key (not limited to mouse buttons like usual).
-  - Also easily allows the use of a ["god sensitivity"](https://gist.github.com/ExeRSolver/c4e852bb2527069e08c1a5e0a9c47613) without changing how the mouse feels whatsoever.
-    - With a god sens, the default boat mode in Ninjabrain Bot may be set to green boat, removing the need to get in a boat and F3+C to get green boat before measuring, assuming you haven't steered a boat at any point beforehand.
-  - Does not require increasing DPI/decreasing pointer speed, avoiding any issues with other games that do not have a raw input option or when using your mouse on other PCs.
-- Windows-like setup + raw input/DPI toggle
-  - This mirrors what you would do on Windows, which involves changing your mouse's DPI and your system's pointer speed to ensure things feel the same after changing your Minecraft sensitivity.
-  - Quickest to setup if your mouse's DPI is already set accordingly, i.e. if you had boat eye set up on Windows beforehand.
+Boat Eye is a method of measuring the size of an eye by using a boat to simulate the movement of the eye in the game. It is a way to get a more accurate measurement of the eye size.
 
-## Method 1: Waywall sensitivity
+## Benefits to Boat Eye on Waywall
+- Lets you decrease your sensitivity automatically when you change to tall resolution, or manually with either a mouse button or keyboard key (not limited to mouse buttons like usual).
+- Easily allows the use of a ["god sensitivity"](https://gist.github.com/ExeRSolver/c4e852bb2527069e08c1a5e0a9c47613) without changing how the mouse feels whatsoever.
+  - With a god sens, the default boat mode in Ninjabrain Bot may be set to green boat, removing the need to get in a boat and F3+C to get green boat before measuring, assuming you haven't steered a boat at any point beforehand.
 
-Skip steps 1.1 and 1.2 if you've never set up boat eye before.
+## 1: Sensitivity Settings
 
-### 1.1: Find Minecraft sens for Windows sens of 10
+Do step 1.1 if you're transitioning from Windows and step 1.2 if you're setting up boat eye from scratch on Linux.
 
+### 1.1: Transitioning from Windows
+#### 1.1.1: Get Waywall Sensitivities
 - Go to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
-- Input your DPI, Minecraft Sensitivity and Windows Sensitivity on the "Reverse Boat Eye Calculator".
-- Note down the Minecraft sens.
-
-### 1.2: Get new waywall and boat eye sensitivities
-
-- Go back to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
-  - You could use the [original mcsr-calcsens python program](https://github.com/Esensats/mcsr-calcsens) if you prefer.
-- Input the new Minecraft sens you got from step 1.1 on "MCSR Calcsens Online".
-  - If you skipped step 1.1, instead input your current Minecraft sens from options.txt.
-    - You can find your current options.txt sensitivity by right clicking your instance in Prism Launcher > Folder > minecraft > options.txt > searching for `mouseSensitivity`.
+- Input your DPI, Minecraft Sensitivity and Windows Sensitivity into "Waywall Sensitivities".
+  - If you already setup your compositor sensitivity and are used to that, you may input your Linux Sensitivity instead of your old Windows Sensitivity.
 - Note down the outputs.
 
-### 1.3: Setup your waywall config
-
-- **If you're using one of Gore's pre-made configs, see the section below.**
-- If you're using your own config:
-  - Set `config.input.sensitivity` to the "New normal sensitivity coefficient" given by mcsr-calcsens.
-  - Use `waywall.set_sensitivity()` to change your sensitivity when moving to tall and back to normal.
-
-### 1.3.1: Gore config setup
-
-- Generic Config
-  - Find this line in `config.lua`:
-
-    ```lua
-    local sens_change = { enabled = false, normal = 1.0, tall = 0.1 }
-    ```
-
-  - Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from mcsr-calcsens.
-- Barebones Config
-  - Find these lines in `init.lua`:
-
-    ```lua
-    -- ==== SENSITIVITIES ====
-    local normal_sens = 1
-    local tall_sens = 0.1
-    ```
-
-  - Set normal_sens and tall_sens to the sensitivity coefficients from mcsr-calcsens.
-
-### 1.4: General boat eye setup
-
-- Set your Minecraft sensitivity to what was given by mcsr-calcsens.
-  - Remember to update your sensitivity in `minecraft/config/mcsr/standardsettings.json` if you're using StandardSettings, otherwise just change `minecraft/options.txt`.
-- Complete the steps from 2:30 to 3:40 in [this boat eye setup video](https://youtu.be/HcrrfsHrR_c?t=150).
-- In Ninjabrain Bot options > Optional Features > Boat Measurements, set the Default boat mode to "Green boat (with boat angle of 0)".
-- Finally, **turn off raw input** ingame (change it in StandardSettings if you're using it) - the waywall sens will only take affect if you do this.
-
-## Method 2: Windows-like setup
-
-### 2.1: Converting Windows sensitivity
+### 1.1.2: Set your Compositor sensitivity
 
 - Convert your Windows cursor speed to the corresponding Linux pointer speed using the following table:
 
@@ -79,8 +30,6 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 |:-----------------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | EPP off | -0.96875 | -0.9375 | -0.875 | -0.75 | -0.625 | -0.5 | -0.375 | -0.25 | -0.125 | 0.0 | 0.25 | 0.5 | 0.75 | 1.0 | 1.25 | 1.5 | 1.75 | 2.0 | 2.25 | 2.5 |
 | EPP on  | -0.9 | -0.8 | -0.7 | -0.6 | -0.5 | -0.4 | -0.3 | -0.2 | -0.1 | 0.0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0 |
-
-### 2.2: Change sensitivity in your settings
 
 - With the value from the table above, change your pointer speed in your compositor's configuration.
 - Below are some examples for some common compositors.
@@ -157,13 +106,52 @@ Skip steps 1.1 and 1.2 if you've never set up boat eye before.
 - Save the file and reload your config with `swaymsg reload`.
 </details>
 
-### 2.3: General boat eye setup
+### 1.2: Setting up Boat eye from Scratch
+- Go to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.
+- Input your current Minecraft Sensitivity on the "Linux Boat Eye Calc".
+- Note down the outputs.
 
-- Complete the steps from 2:30 to 3:40 in [this boat eye setup video](https://youtu.be/HcrrfsHrR_c?t=150).
+## 2: Setup your waywall config
 
-## Measuring an eye
+- **If you're using one of Gore's pre-made configs, see the section below.**
+- If you're using your own config:
+  - Set `config.input.sensitivity` to the "New normal sensitivity coefficient" given by mcsr-calcsens.
+  - Use `waywall.set_sensitivity()` to change your sensitivity when moving to tall and back to normal.
 
-- After setting your sensitivity with one of the methods above, watch the [boat eye setup video](https://youtu.be/HcrrfsHrR_c?t=324) from 5:24 for an example boat eye measurement.
-  - On either of Gore's template configs, the default key for tall resizing & magnifying is **F4**.
-  - If you followed the waywall sensitivity method above, note that you can skip pressing F3+C when exiting the boat - the boat icon on Ninjabrain Bot should be green by default.
+### 2.1: Gore config setup
+
+- Generic Config
+  - Find this line in `config.lua`:
+
+    ```lua
+    local sens_change = { enabled = false, normal = 1.0, tall = 0.1 }
+    ```
+
+  - Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from mcsr-calcsens.
+- Barebones Config
+  - Find these lines in `init.lua`:
+
+    ```lua
+    -- ==== SENSITIVITIES ====
+    local normal_sens = 1
+    local tall_sens = 0.1
+    ```
+
+  - Set normal_sens and tall_sens to the sensitivity coefficients from mcsr-calcsens.
+
+## 3: General boat eye setup
+
+- Set your Minecraft sensitivity to `0.02291165`.
+  - Remember to update your sensitivity in `minecraft/config/mcsr/standardsettings.json` if you're using StandardSettings, otherwise just change `minecraft/options.txt`.
+- Complete the steps in [this boat eye setup video](https://youtu.be/FQiGzO-oCZo) to setup Ninjabrain Bot.
+- Finally, **turn off raw input** ingame (change it in StandardSettings if you're using it) - the waywall sens will only take affect if you do this.
+    - Note that you won't be able to toggle sens using raw input anymore, you will either need to use waywall sensitivities or a dpi switch if you prefer.
+
+
+## 4: Measuring an eye
+
+- After setting your sensitivity with the method above, watch the [boat eye setup video](https://youtu.be/l1Z2t9e6Qko?t=442) from 7:22 for an example boat eye measurement.
+  - On either of Gore's pre-made configs, the default key for tall resizing & magnifying is **F4**.
+  - Note that you can skip pressing F3+C when exiting the boat - the boat icon on Ninjabrain Bot should be green by default.
     - This is made possible by using the god sens in Minecraft and the specific waywall sensitivity values given by mcsr-calcsens.
+  - You don't need to toggle your raw input while measuring either, going to the tall resolution should already lower your sensitivity to make it easier to measure an eye

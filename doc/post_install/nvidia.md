@@ -1,6 +1,7 @@
 # NVIDIA Drivers
 
 - Before we setup Minecraft we need to first install the NVIDIA Drivers. If you are not on an NVIDIA GPU you can skip to the [Java](java.html) section.
+- If you have Secure Boot enabled, the installation of NVIDIA Drivers might not work for you correctly. You can disable Secure Boot in BIOS, or follow the steps from [this guide](https://rpmfusion.org/Howto/Secure%20Boot) before proceeding to the next step.
 - Open up a terminal and then type in these commands.
 
 ```bash

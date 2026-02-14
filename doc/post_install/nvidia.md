@@ -4,6 +4,7 @@
 - Open up a terminal and then type in these commands.
 
 ```bash
+sudo dnf upgrade
 sudo dnf install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf makecache

@@ -36,75 +36,80 @@ Do step 1.1 if you're transitioning from Windows and step 1.2 if you're setting 
 
 <details>
 <summary>KDE</summary>
-<br>
-- Press Alt+F2 to open KRunner, and search for "mouse settings".
-- Set "Pointer speed" to your new sensitivity.
+<ul>
+<li>Press <kbd>Alt</kbd>+<kbd>F2</kbd> to open KRunner, and search for “mouse settings”.</li>
+<li>Set “Pointer speed” to your new sensitivity.</li>
+</ul>
 </details>
 
-<br />
 
 <details>
-<summary>Hyprland</summary>
-<br>
+  <summary>Hyprland</summary>
 
-- Open the Hyprland config file in a text editor: `~/.config/hypr/hyprland.conf`.
-- If you haven't added your devices config yet, run `hyprctl devices` in your terminal and you'll see an output like this:
+  <ul>
+    <li>Open the Hyprland config file in a text editor: <code>~/.config/hypr/hyprland.conf</code>.</li>
+    <li>If you have not added your devices config yet, run <code>hyprctl devices</code> in your terminal and you will see an output like this:</li>
+  </ul>
 
-    ```bash
-    $ hyprctl devices
-        ...
+  <pre><code class="language-bash">$ hyprctl devices
+...
 
-        Input Device: turtle-beach-burst-ii-air-mouse
+Input Device: turtle-beach-burst-ii-air-mouse
 
-        ...
-    ```
+...</code></pre>
 
-- Then add the following block of code to the config file, setting the name to what you got from the previous step, and sensitivity to your new sensitivity:
+  <ul>
+    <li>Then add the following block of code to the config file, setting the name to what you got from the previous step, and sensitivity to your new sensitivity:</li>
+  </ul>
 
-    ```ini
-    # eg: for a windows sensitivity of 3
-    device {
-        name = turtle-beach-burst-ii-air-mouse
-        accel_profile = flat
-        sensitivity = -0.875
-        natural_scroll = false
-    }
-    ```
+  <pre><code class="language-ini"># eg: for a windows sensitivity of 3
+device {
+    name = turtle-beach-burst-ii-air-mouse
+    accel_profile = flat
+    sensitivity = -0.875
+    natural_scroll = false
+}</code></pre>
 
-- Save the file and reload your config with `hyprctl reload`.
+  <ul>
+    <li>Save the file and reload your config with <code>hyprctl reload</code>.</li>
+  </ul>
 </details>
 
-<br />
 
 <details>
-<summary>Sway</summary>
-<br>
+  <summary>Sway</summary>
 
-- Open your config file in a text editor: `~/.config/sway/config`.
-- If you haven't added your devices config yet, run `swaymsg -t get_inputs` in your terminal and you'll see an output like this:
+  <ul>
+    <li>Open your config file in a text editor: <code>~/.config/sway/config</code>.</li>
+    <li>If you have not added your device config yet, run: <code>swaymsg -t get_inputs</code> in your terminal. You will see output like this:</li>
+  </ul>
 
-    ```bash
-    $ swaymsg -t get_inputs
-        ...
-        Input device:Turtle Beach Burst II Air Mouse
-        Type: pointer
-        Identifier: 4341:20482:Turtle_Beach_Burst_II_Air_Mouse
-        ...
-    ```
+  <pre><code class="language-bash">$ swaymsg -t get_inputs
+...
+Input device:Turtle Beach Burst II Air Mouse
+Type: pointer
+Identifier: 4341:20482:Turtle_Beach_Burst_II_Air_Mouse
+...</code></pre>
 
-- Then add the following block of code to the config file, setting the input identifier to what you got from the previous step, and pointer_accel to your new sensitivity:
+  <ul>
+    <li>Add the following block to your config file, replacing the identifier and sensitivity value with your own:</li>
+  </ul>
 
-    ```ini
-    # eg: for a windows sensitivity of 3
-    input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
-        natural_scroll disabled
-        accel_profile "flat"
-        pointer_accel -0.875
-    }
-    ```
+  <pre><code class="language-ini"># Example: Windows sensitivity 3
+input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
+    natural_scroll disabled
+    accel_profile "flat"
+    pointer_accel -0.875
+}</code></pre>
 
-- Save the file and reload your config with `swaymsg reload`.
+  <ul>
+    <li>Save the file and reload Sway with:
+      <code>swaymsg reload</code>
+    </li>
+  </ul>
+
 </details>
+
 
 ### 1.2: Setting up Boat eye from Scratch
 - Go to the [Waywall Boat Eye Utility](https://arjuncgore.github.io/waywall-boat-eye-calc/) Website.

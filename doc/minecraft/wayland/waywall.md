@@ -8,19 +8,56 @@
   - Lots of custom functionality.
 - If you're using **X11**, please use [resetti](../x11/resetti.html) instead.
 
-## Installation
+## Installation From Prebuilt Binaries
 
 - To install waywall on Fedora:
-  - First install the dependencies with the following terminal command:
+  - Install the latest .rpm from the [waywall github](https://github.com/tesselslate/waywall/tags).
+  - After installing the .rpm, you should be able to open it through your file manager, where you will then have an option to install it
+
+- To Install waywall on Debian
+  - Install the latest .deb from the [waywall github](https://github.com/tesselslate/waywall/tags).
+  - After installing the .deb, you should be able to open it through your file manager, where you will then have an option to install it
+  
+- On Arch Linux, [you can install waywall through the AUR](https://aur.archlinux.org/packages/waywall-working-git).
+  - You may also download the latest .tar.zst from the [waywall github](https://github.com/tesselslate/waywall/tags) and use pacman to install it.
+
+- Run `waywall` in a terminal to check it's installed properly.
+ - **NO MATTER WHAT** your distro is, if you downloaded from prebuilt binary or AUR, your MC Launcher's wrapper command should just be `waywall wrap --`.
+
+
+## Installation From Source
+
+- To install dependencies on Fedora:
+  - Use the following terminal command:
 
     ```bash
     sudo dnf install libspng-devel cmake meson mesa-libEGL-devel luajit-devel libwayland-client libwayland-server libwayland-cursor libxkbcommon-devel xorg-x11-server-Xwayland-devel wayland-protocols-devel wayland-scanner wayland-devel libXcursor-devel libXi-devel libXinerama-devel libXrandr-devel
     ```
+    
+- To install dependencies on Arch:
+  - Use the following terminal command:
 
+    ```bash
+    sudo pacman -S ninja meson wayland-protocols libegl libgles luajit libspng libxcb libxkbcommon xorg-xwayland
+    ```
+    
+- To install dependencies on Debian:
+  - Use the following terminal command:
+
+    ```bash
+    sudo apt install meson libluajit-5.1-dev libspng-dev libxcb-composite0-dev libxcb-res0-dev libxcb-xtest0-dev luajit libwayland-dev
+    ```
+    
+    - Due to debian using an old version of libxcb, we also need to apply a patch.
+  
+    ```
+    curl -o mod.patch https://files.catbox.moe/my3adv.patch
+    git apply mod.patch
+    ```
+    
   - Then, run the commands on [this page of the waywall documentation](https://tesselslate.github.io/waywall/00_installation.html#compiling) to compile waywall from source.
 
-- On Arch Linux, [you can install waywall through the AUR](https://aur.archlinux.org/packages/waywall-working-git).
-- Users on Debian-based distros may have trouble building waywall manually due to certain dependencies being far out of date. If you're having trouble, join the [Linux MCSR Discord server](https://discord.gg/3tm4UpUQ8t).
+- Users on Debian-based distros may have trouble building waywall manually due to the extra patch thats required. If you're having trouble, join the [Linux MCSR Discord server](https://discord.gg/3tm4UpUQ8t).
 
 - Run `waywall` in a terminal to check it's installed properly.
   - Use the absolute path to the waywall executable if this doesn't work (i.e. if you built waywall in `/home/username/waywall/build/waywall`, run `/home/username/waywall/build/waywall/waywall`).

@@ -95,7 +95,7 @@ while true
 do
     for i in {1..X}
     do
-        for save in $(ls /tmp/mc/$i -t1 --ignore=Z* | tail -n +100)
+        for save in $(ls /tmp/mc/$i -t1 --ignore=Z* | tail -n +1000)
         do
             rm -r "/tmp/mc/$i/$save"
         done

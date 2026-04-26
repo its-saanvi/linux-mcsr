@@ -16,6 +16,8 @@ While this sounds nice, you should have more of a reason other than speedrunning
 - Linux, with more support from developers and with things like Proton, is catching up to Windows for gamers, creatives, developers, and your average computer user.
 - If there’s something you still need Windows for though (notably Valorant/Fortnite/Adobe software), don’t worry - this guide will also go over dual-booting, so you can use both Windows and Linux interchangeably.
 
+**Keep in mind**, Linux systems are generally not just a drop-in replacement for MS Windows and involve learning a new environment. It's recommended to do some research first (on topics including but not limited to: best practices, release models, how to stay safe, security practices, etc.) before fully committing. A general rule of thumb is not to try to force your current setup on Linux, as not all Windows apps are supported. Instead, focus more on 'How can I do X here?' rather than 'How can I run Y here?'.
+
 ## Distributions & Desktop Environments
 
 - Linux, being a **free and open source operating system**, comes in several different flavours a.k.a distributions a.k.a distros.
@@ -46,6 +48,6 @@ While this sounds nice, you should have more of a reason other than speedrunning
 - Before rebooting your computer and beginning to install Fedora, you should make space on your hard drive for Fedora to install to.
 - Press Windows+R, and type `diskmgmt.msc`. Here, you should see all of your disks - ideally you have a separate disk to install Fedora to, but usually we install it alongside Windows on the `C:/` disk.
 - If using the `C:/` disk, right click the main (largest) partition on the disk and select **Shrink Volume**.
-- If you can spare around **50 GB** (around 50000 MB) for Fedora, then do so. If you're sure you have the free space on the disk but it isn't letting you shrink it enough, consider using a third-party app like [MiniDisk Partition Wizard](https://www.partitionwizard.com/free-partition-manager.html) to shrink the volume instead.
+- If you can spare around **50 GB** (around 50000 MB) for Fedora, then do so. If you're sure you have the free space on the disk but it isn't letting you shrink it enough, consider using a third-party app like [MiniDisk Partition Wizard](https://www.partitionwizard.com/free-partition-manager.html) to shrink the volume instead. You can also disable these unmovable files manually if you know what you are doing. It generally involves disabling: System Protection/Restore Points, hibernation, kernel memory dump, and paging file(s), running disk clean-ups and optimizations. After rebooting to apply changes, more space should be available for shrinkage, after which you should undo the previous steps and reboot the system again.
 - Leave this as empty space - do not make a new partition after shrinking.
 - You can shrink the volume further after installing Fedora if you need more space - for now, shrink it as much as possible, then move to the [live environment](live-env.html) section to finally install Fedora.

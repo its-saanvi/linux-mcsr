@@ -40,6 +40,8 @@ echo "Hello World"
 chmod -x bin
 ```
 
+If interested in learning more about file permissions, this [Red Hat blog post](https://www.redhat.com/en/blog/linux-file-permissions-explained) is a good resource.
+
 ## Clearing out worlds
 
 - Now that we know much about the Linux terminal, we can now make scripts to automate our filesystem tasks.

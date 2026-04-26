@@ -15,5 +15,5 @@ The instructions below will show you how to boot into the Fedora live environmen
 ## Testing the Live Environment
 
 - Now that you have the Live Environment running, you can test out Fedora running the KDE Plasma desktop environment.
-- Linux, given its versatility, doesn't require you to install the system on your physical hardware in order to test it, so whatever you do on here will not affect what you have already on your system. Feel free to mess around!
+- Linux, given its versatility, doesn't require you to install the system on your physical hardware in order to test it, so whatever you do on here will not affect what you have already on your system (unless you manually attempt to edit the current setup, e.g., mount and open other partitions, use tools like disk partitioners, etc.). Feel free to mess around!
 - When you are done, you can proceed with the [installation](installation.html) procedure.

@@ -125,10 +125,10 @@ input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
 
 ### 2.1: Generic config setup
 
-- Find this line in `config.lua`:
+- Find this line in `init.lua`:
 
   ```lua
-  local sens_change = { enabled = false, normal = 1.0, tall = 0.1 }
+  sens_change = { enabled = false, normal = 1.0, tall = 0.1, raw_input = false },
   ```
 
 - Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from the Waywall Boat Eye Utility website.

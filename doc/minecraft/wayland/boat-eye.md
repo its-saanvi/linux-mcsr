@@ -118,31 +118,20 @@ input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
 
 ## 2: Setup your waywall config
 
-- **If you're using one of Gore's pre-made configs, see the section below.**
+- **If you're using the generic config by Gore, see the section below.**
 - If you're using your own config:
-  - Set `config.input.sensitivity` to the "New normal sensitivity coefficient" given by mcsr-calcsens.
+  - Set `config.input.sensitivity` to the new "Waywall Normal Sensitivity" given by the Waywall Boat Eye Utility website.
   - Use `waywall.set_sensitivity()` to change your sensitivity when moving to tall and back to normal.
 
-### 2.1: Gore config setup
+### 2.1: Generic config setup
 
-- Generic Config
-  - Find this line in `config.lua`:
+- Find this line in `init.lua`:
 
-    ```lua
-    local sens_change = { enabled = false, normal = 1.0, tall = 0.1 }
-    ```
+  ```lua
+  sens_change = { enabled = false, normal = 1.0, tall = 0.1, raw_input = false },
+  ```
 
-  - Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from mcsr-calcsens.
-- Barebones Config
-  - Find these lines in `init.lua`:
-
-    ```lua
-    -- ==== SENSITIVITIES ====
-    local normal_sens = 1
-    local tall_sens = 0.1
-    ```
-
-  - Set normal_sens and tall_sens to the sensitivity coefficients from mcsr-calcsens.
+- Set enabled to true, and normal and tall to the normal and tall sensitivity coefficients from the Waywall Boat Eye Utility website.
 
 ## 3: General boat eye setup
 
@@ -156,7 +145,7 @@ input "4341:20482:Turtle_Beach_Burst_II_Air_Mouse" {
 ## 4: Measuring an eye
 
 - After setting your sensitivity with the method above, watch the [boat eye setup video](https://youtu.be/l1Z2t9e6Qko?t=442) from 7:22 for an example boat eye measurement.
-  - On either of Gore's pre-made configs, the default key for tall resizing & magnifying is **F4**.
+  - On the generic config by Gore, the default key for tall resizing & magnifying is **F4**.
   - Note that you can skip pressing F3+C when exiting the boat - the boat icon on Ninjabrain Bot should be green by default.
-    - This is made possible by using the god sens in Minecraft and the specific waywall sensitivity values given by mcsr-calcsens.
+    - This is made possible by using the god sens in Minecraft and the specific waywall sensitivity values given by the Waywall Boat Eye Utility website.
   - You don't need to toggle your raw input while measuring either, going to the tall resolution should already lower your sensitivity to make it easier to measure an eye

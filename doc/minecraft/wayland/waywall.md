@@ -8,6 +8,26 @@
   - Lots of custom functionality.
 - If you're using **X11**, please use [resetti](../x11/resetti.html) instead.
 
+## Installer Script
+> **Always be very careful running the scripts of the internet, only run the script that you can trust**
+
+Below is the automated installation script created by [snaw](https://github.com/lemonsnaw).
+It does following:
+- Download and setup default JDK to avoid issue related to headless JDK
+- Download and install Prism launcher(flatpak prisms backup is taken at runtime)
+- Downloads and install waywall
+- Downloads Gores Generic Config sets it up for waywall
+- Configures your minecraft instance to use waywall ( wrapper and glfw setup
+- Setup Ninjabrain bot for boateye (godsens,greenboat,std deviation etc).
+( doesnt set sensitivies in waywall , you have to do it manually. Please check guide here https://its-saanvi.github.io/linux-mcsr/minecraft/wayland/boat-eye.html)
+- Optionally, can setup plugwaywall + plugins for generic config in any point in time
+- Dragclicking support 
+
+
+Check how to run and supported os on their page:
+**https://github.com/lemonsnaw/snaws-waywall-installer**
+
+
 ## Installation
 - To install waywall on **Fedora** / **Nobara**:
   - **Fedora 42 / Nobara 42 onwards**, prebuilt binaries are available and is recommended way to install waywall. Please download the `.x86_64.rpm` package from [releases of waywall](https://github.com/tesselslate/waywall/releases). 

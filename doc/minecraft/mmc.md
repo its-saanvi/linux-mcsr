@@ -18,7 +18,7 @@ sudo dnf install prismlauncher
 
 ## Instance Setup
 
-- You can watch this [Windows setup guide](https://www.youtube.com/watch?v=RSLv7FfQZKY) to get your Minecraft instance set up. The instructions should be largely the same on Linux, with the exception of:
+- You can watch this [Windows setup guide](https://www.youtube.com/watch?v=l-q-_4R8_6M) to get your Minecraft instance set up. The instructions should be largely the same on Linux, with the exception of:
   - Running Java apps (i.e. ModCheck), as explained in the [Java](../post_install/java.html) section earlier, can be done in the terminal with `java -jar <path/to/jarfile.jar>`, replacing `<path/to/jarfile.jar>` with the actual path to the .jar file.
   - Ninjabrain Bot will not work out of the box on Wayland - we will setup an app called [waywall](./wayland/waywall.html) later to address this.
   - Jingle is a Windows-only application - we will set up alternatives later for either Wayland or X11.

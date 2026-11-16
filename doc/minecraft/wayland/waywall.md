@@ -67,6 +67,26 @@ Check how to run and supported os on their page:
   
   - **Ubuntu 26.04** has been tested and verified  working with waywall using `.deb` package. Follow the same installations instruction as Debian.
   - **Linux Mint 22.3 and below/Any distro based on Ubuntu 24.04 or below** cannot run waywall due outdated dependencies and should switch to x11 and use [resetti](../x11/resetti.html) instead.
+    
+
+- On **SteamOS (or for local installation on Arch)**:
+  - Prebuilt binary (waywall + glfw) is available in [waywall releases](https://github.com/tesselslate/waywall/releases) and is recommended way to install waywall.
+    1. Download the `waywallXXXXX-x86_64.pkg.tar.zst`. where `XXXXX` is version
+    2. Untar the download with `tar -xf waywallXXXXX-x86_64.pkg.tar.zst`
+    3. For any further instructions that refer to the `waywall` executable or the GLFW shared object library, instead use the full path where you have untarred the .zst file.
+
+        Example: `/home/deck/mcsr/deps/waywall/usr/bin/waywall`
+    4. After attempting to launch, you may find that some libraries are missing (for example `libspng`). There are multiple ways to fix this. The "easy route" is to install `libspng` by disabling SteamOS readonly mode, which allows commands like `sudo pacman -S libspng`. As this library is small, there is no real downside to doing this.
+
+        However, if you would like to avoid modifying the root partition as much as possible (or if larger libraries are required in the future, or in your setup), you can also locally install libraries using e.g. `pacman -S --root $HOME/mcsr/deps/ libspng`. This will create a "root-like" folder structure in `$HOME/mcsr/deps/`. In order for libraries in here to be seen by Waywall, you can add a .conf file in `/etc/ld.so.conf.d`:
+
+        ```bash
+        sudoedit /etc/ld.so.conf.d/mcsr.conf
+        (in editor: add the following) /home/deck/mcsr/deps/usr/lib/ # ensure that this is the correct library path, obviously
+        sudo ldconfig # required for ld to recognize the updated library locations
+        ```
+
+        This will allow you to install arbitrary libraries without requiring space in your root partition.
 
 ## Verification of installation
 - Run `waywall` or **whole path to binary if you have built from source** in a terminal to check it's installed properly.

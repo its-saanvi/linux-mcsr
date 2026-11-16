@@ -37,3 +37,7 @@
 - [Drag clicking](./drag-clicking.md)
 - [tmpfs](./tmpfs.md)
 - [Resources](./resources.md)
+
+# Distribution-Specific
+
+- [Steam Deck (SteamOS)](./distributions/steamos.md)
